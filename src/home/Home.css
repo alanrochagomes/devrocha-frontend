@@ -1,75 +1,108 @@
 .consultoria-container {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  padding: 20px;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .consultoria-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }
 
 .consultoria-title {
-  font-size: 2rem;
-  color: #007bff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .consultoria-subtitle {
   font-size: 1.2rem;
-  color: #555;
+  color: #666;
 }
 
 .consultoria-section {
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }
 
 .consultoria-section-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .consultoria-list {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .consultoria-list-item {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
 }
 
 .consultoria-form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.consultoria-input {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
+.consultoria-input,
 .consultoria-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 .consultoria-button {
-  background-color: #007bff;
-  color: #fff;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .consultoria-button:hover {
-  background-color: #0056b3;
+  background-color: #444;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .consultoria-title {
+    font-size: 2rem;
+  }
+
+  .consultoria-subtitle {
+    font-size: 1rem;
+  }
+
+  .consultoria-section-title {
+    font-size: 1.5rem;
+  }
+
+  .consultoria-list-item {
+    padding: 0.8rem;
+  }
+
+  .consultoria-container {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .consultoria-title {
+    font-size: 1.8rem;
+  }
+
+  .consultoria-section-title {
+    font-size: 1.3rem;
+  }
+
+  .consultoria-list-item {
+    font-size: 0.9rem;
+  }
 }
