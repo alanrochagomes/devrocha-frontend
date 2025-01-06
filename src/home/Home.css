@@ -70,7 +70,6 @@
   background-color: #444;
 }
 
-/* Estilos responsivos */
 @media screen and (max-width: 768px) {
   .consultoria-title {
     font-size: 2rem;
