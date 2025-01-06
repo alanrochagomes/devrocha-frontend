@@ -1,107 +1,286 @@
-.consultoria-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.consultoria-header {
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 80vh;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #0066cc;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 500px;
+  margin-left: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+.beneficios-section {
+  padding: 4rem 8%;
+  background: white;
+}
+
+.beneficios-section h2 {
   text-align: center;
   margin-bottom: 3rem;
+  font-size: 2.5rem;
 }
 
-.consultoria-title {
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.beneficio-card {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-5px);
+}
+
+.beneficio-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.servicos-principais {
+  padding: 4rem 8%;
+  background: #f8f9fa;
+}
+
+.servicos-principais h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.servicos-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.servico-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+}
+
+.servico-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.consultoria-subtitle {
-  font-size: 1.2rem;
-  color: #666;
+.servico-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.consultoria-section {
+.cta-section {
+  padding: 6rem 8%;
+  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #0066cc;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.tecnologias-section {
+  padding: 4rem 8%;
+  background: white;
+}
+
+.tecnologias-section h2 {
+  text-align: center;
   margin-bottom: 3rem;
 }
 
-.consultoria-section-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.tecnologias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  align-items: center;
 }
 
-.consultoria-list {
-  list-style: none;
-  padding: 0;
+.tecnologia-card {
+  text-align: center;
 }
 
-.consultoria-list-item {
+.tecnologia-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  border-radius: 8px;
 }
 
-.consultoria-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+.numeros-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 4rem 8%;
+  background: #f8f9fa;
+  text-align: center;
 }
 
-.consultoria-input,
-.consultoria-textarea {
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+.numero-item h3 {
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
 }
 
-.consultoria-button {
-  padding: 1rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin: 2rem 0 0;
+  }
+
+  .beneficios-section,
+  .servicos-principais,
+  .tecnologias-section,
+  .numeros-section {
+    padding: 3rem 5%;
+  }
 }
 
-.consultoria-button:hover {
-  background-color: #444;
-}
-
-@media screen and (max-width: 768px) {
-  .consultoria-title {
+@media (max-width: 480px) {
+  .hero-content h1 {
     font-size: 2rem;
   }
 
-  .consultoria-subtitle {
-    font-size: 1rem;
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.8rem 1.5rem;
   }
 
-  .consultoria-section-title {
-    font-size: 1.5rem;
+  .servico-card {
+    padding: 1.5rem;
   }
 
-  .consultoria-list-item {
-    padding: 0.8rem;
+  .cta-section {
+    padding: 4rem 5%;
   }
 
-  .consultoria-container {
-    padding: 1rem;
+  .cta-content h2 {
+    font-size: 2rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .consultoria-title {
-    font-size: 1.8rem;
-  }
+[data-aos] {
+  pointer-events: none;
+}
 
-  .consultoria-section-title {
-    font-size: 1.3rem;
-  }
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
 
-  .consultoria-list-item {
-    font-size: 0.9rem;
+@media screen and (max-width: 768px) {
+  [data-aos] {
+    pointer-events: auto !important;
   }
+}
+
+.home-container {
+  overflow-x: hidden;
+}
+
+[data-aos="fade-up"],
+[data-aos="fade-down"],
+[data-aos="fade-right"],
+[data-aos="fade-left"] {
+  transform: none;
 }

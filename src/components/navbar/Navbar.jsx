@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/projetos" className="nav-link" onClick={toggleMenu}>
+            <Link to="/portfolio" className="nav-link" onClick={toggleMenu}>
               Projetos
             </Link>
           </li>
