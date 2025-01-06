@@ -1,0 +1,75 @@
+.consultoria-container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.consultoria-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.consultoria-title {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.consultoria-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.consultoria-section {
+  margin-bottom: 20px;
+}
+
+.consultoria-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.consultoria-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.consultoria-list-item {
+  margin-bottom: 10px;
+}
+
+.consultoria-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.consultoria-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.consultoria-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.consultoria-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.consultoria-button:hover {
+  background-color: #0056b3;
+}
