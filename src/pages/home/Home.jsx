@@ -1,5 +1,5 @@
 import React from "react";
-import "../home/Home.css";
+import "./Home.css";
 const Consultoria = () => {
   return (
     <div className="consultoria-container">
