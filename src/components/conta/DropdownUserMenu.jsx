@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import EditProfileModal from "./EditProfileModal";
 import "../conta/DropdownUserMenu.css";
 
-const DropdownUserMenu = ({ onLogout, isAdmin }) => {
+const DropdownUserMenu = ({ onLogout }) => {
   const [userName, setUserName] = useState("Usuário");
   const [profilePicture, setProfilePicture] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,15 +24,6 @@ const DropdownUserMenu = ({ onLogout, isAdmin }) => {
     setCurrentTime(
       now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     );
-
-    const interval = setInterval(() => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-      );
-    }, 60000);
-
-    return () => clearInterval(interval);
   }, []);
 
   const handleProfileUpdate = () => {
@@ -42,21 +33,23 @@ const DropdownUserMenu = ({ onLogout, isAdmin }) => {
   return (
     <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="user-button"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        {profilePicture ? (
-          <img src={profilePicture} alt="Foto de Perfil" className="avatar" />
-        ) : (
-          <div className="avatar">{userName[0]?.toUpperCase()}</div>
-        )}
-        <span>{userName}</span>
-        <span className="user-time">{currentTime}</span>
+        <div className="user-info">
+          {profilePicture ? (
+            <img src={profilePicture} alt="Perfil" className="user-avatar" />
+          ) : (
+            <div className="user-avatar">{userName[0]?.toUpperCase()}</div>
+          )}
+          <span className="user-name">{userName}</span>
+          <span className="user-time">{currentTime}</span>
+        </div>
       </button>
 
-      <ul className="dropdown-menu">
+      <ul className="dropdown-menu dark-dropdown">
         <li>
           <button
             className="dropdown-item"
@@ -66,20 +59,6 @@ const DropdownUserMenu = ({ onLogout, isAdmin }) => {
             Editar Perfil
           </button>
         </li>
-
-        {isAdmin && (
-          <li>
-            <button
-              className="dropdown-item"
-              type="button"
-              onClick={() => {
-                window.location.href = "/admin";
-              }}
-            >
-              Admin
-            </button>
-          </li>
-        )}
         <li>
           <button className="dropdown-item" type="button" onClick={onLogout}>
             Sair

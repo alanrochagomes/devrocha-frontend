@@ -1,92 +1,158 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-import DropdownUserMenu from "../conta/DropdownUserMenu";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+const Navbar = ({ user, setUser }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
 
   const handleLogout = () => {
+    localStorage.removeItem("token");
     localStorage.removeItem("isAuthenticated");
     localStorage.removeItem("user");
-    setIsLoggedIn(false);
     setUser(null);
-    navigate("/login");
+    window.location.reload();
   };
 
-  useEffect(() => {
-    const authStatus = localStorage.getItem("isAuthenticated");
-    setIsLoggedIn(authStatus === "true");
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    document.body.style.overflow = !isMobileMenuOpen ? "hidden" : "auto";
+  };
 
-    const userData = JSON.parse(localStorage.getItem("user"));
-    if (userData) {
-      setUser(userData);
-    }
-  }, []);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <h1 className="logo-name">NettCorpSolutions</h1>
-        </div>
-        <div className="menu-icon" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
+      <div className="navbar-brand">
+        <Link to="/">NettCorpSolutions</Link>
+        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? (
+            <span className="close-icon">×</span>
+          ) : (
+            <span className="menu-icon">☰</span>
+          )}
+        </button>
+      </div>
 
-        <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
-          <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={toggleMenu}>
+      {/* Menu móvel */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-menu-header">
+            <span className="mobile-brand">NettCorpSolutions</span>
+            <button className="close-button" onClick={toggleMobileMenu}>
+              ×
+            </button>
+          </div>
+          <div className="mobile-menu-content">
+            <Link to="/" onClick={toggleMobileMenu}>
               Home
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/servicos" className="nav-link" onClick={toggleMenu}>
+            <Link to="/servicos" onClick={toggleMobileMenu}>
               Serviços
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/portfolio" className="nav-link" onClick={toggleMenu}>
+            <Link to="/projetos" onClick={toggleMobileMenu}>
               Projetos
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contato" className="nav-link" onClick={toggleMenu}>
+            <Link to="/contato" onClick={toggleMobileMenu}>
               Contato
             </Link>
-          </li>
-          <li className="nav-item">
-            {isLoggedIn ? (
-              <div className="user-info">
-                {/* <img
-                  src={user.profilePicture}
-                  alt="Foto de Perfil"
-                  className="user-avatar"
-                /> */}
-                <div className="user-details">
-                  <span className="user-name">{user.name}</span>
-                  <span className="user-email">{user.email}</span>
-                  <span className="user-time">11:49 BRT</span>
-                </div>
-                <button onClick={handleLogout} className="logout-button">
+            {isAuthenticated ? (
+              <>
+                <Link to="/configuracoes" onClick={toggleMobileMenu}>
+                  Configurações
+                </Link>
+                <Link to="/andamento" onClick={toggleMobileMenu}>
+                  Andamento
+                </Link>
+                <button className="logout-button" onClick={handleLogout}>
                   Sair
                 </button>
-              </div>
+              </>
             ) : (
-              <Link to="/login" className="nav-link" onClick={toggleMenu}>
+              <Link
+                to="/login"
+                className="mobile-login"
+                onClick={toggleMobileMenu}
+              >
                 Área do Cliente
               </Link>
             )}
-          </li>
-        </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Menu desktop */}
+      <div className="desktop-menu">
+        <div className="navbar-links">
+          <Link to="/">Home</Link>
+          <Link to="/servicos">Serviços</Link>
+          <Link to="/projetos">Projetos</Link>
+          <Link to="/contato">Contato</Link>
+        </div>
+        <div className="navbar-auth">
+          {isAuthenticated ? (
+            <div className="user-section">
+              <div className="dropdown">
+                <button
+                  className={`btn user-button ${
+                    isDropdownOpen ? "active" : ""
+                  }`}
+                  onClick={toggleDropdown}
+                >
+                  {JSON.parse(localStorage.getItem("user"))?.name || "Usuário"}
+                </button>
+                {isDropdownOpen && (
+                  <ul className="dropdown-menu dropdown-menu-dark show">
+                    <li>
+                      <Link
+                        to="/configuracoes"
+                        className="dropdown-item"
+                        onClick={closeDropdown}
+                      >
+                        Configurações
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/andamento"
+                        className="dropdown-item"
+                        onClick={closeDropdown}
+                      >
+                        Andamento
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        className="dropdown-item"
+                        onClick={() => {
+                          closeDropdown();
+                          handleLogout();
+                        }}
+                      >
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </div>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="area-cliente-button"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Área do Cliente
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );
