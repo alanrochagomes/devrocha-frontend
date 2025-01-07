@@ -26,102 +26,112 @@ const Servicos = () => {
     },
   ];
 
-  const portfolioCategorias = [
-    {
-      titulo: "Pet Shops",
-      imagem: "/images/petshop.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Colégios",
-      imagem: "/images/colegio.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Contabilidade",
-      imagem: "/images/contabilidade.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Barbearias",
-      imagem: "/images/barbearia.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Advocacia",
-      imagem: "/images/advocacia.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Academias",
-      imagem: "/images/academia.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Medicina",
-      imagem: "/images/medicina.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Igrejas",
-      imagem: "/images/igreja.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "TI e Informática",
-      imagem: "/images/ti.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Supermercados",
-      imagem: "/images/supermercado.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Salões de Beleza",
-      imagem: "/images/salao.jpg",
-      categorias: ["todos", "criacao"],
-    },
-    {
-      titulo: "Restaurantes",
-      imagem: "/images/restaurante.jpg",
-      categorias: ["todos", "criacao"],
-    },
-  ];
+  // const portfolioCategorias = [
+  //   {
+  //     titulo: "Pet Shops",
+  //     imagem:
+  //       "https://img.freepik.com/free-vector/hand-drawn-pet-shop-pattern-background_23-2150842425.jpg?semt=ais_hybrid",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Colégios",
+  //     imagem: "/images/colegio.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Contabilidade",
+  //     imagem: "/images/contabilidade.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Barbearias",
+  //     imagem: "/images/barbearia.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Advocacia",
+  //     imagem: "/images/advocacia.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Academias",
+  //     imagem: "/images/academia.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Medicina",
+  //     imagem: "/images/medicina.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Igrejas",
+  //     imagem: "/images/igreja.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "TI e Informática",
+  //     imagem: "/images/ti.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Supermercados",
+  //     imagem: "/images/supermercado.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Salões de Beleza",
+  //     imagem: "/images/salao.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  //   {
+  //     titulo: "Restaurantes",
+  //     imagem: "/images/restaurante.jpg",
+  //     categorias: ["todos", "criacao"],
+  //   },
+  // ];
 
   const faqQuestions = [
     {
       question: "Meu site aparecerá no Google?",
-      answer: "Sim, está incluso em nosso trabalho de desenvolvimento de sites cadastrar seu site no Google e otimizar ele de acordo com as boas práticas de SEO."
+      answer:
+        "Sim, está incluso em nosso trabalho de desenvolvimento de sites cadastrar seu site no Google e otimizar ele de acordo com as boas práticas de SEO.",
     },
     {
       question: "Quais tipos de sites vocês desenvolvem?",
-      answer: "Desenvolvemos diversos tipos de sites, incluindo sites institucionais, e-commerce, landing pages, blogs, portais e sistemas web personalizados."
+      answer:
+        "Desenvolvemos diversos tipos de sites, incluindo sites institucionais, e-commerce, landing pages, blogs, portais e sistemas web personalizados.",
     },
     {
-      question: "Vou conseguir fazer alterações no meu próprio site sem dificuldades?",
-      answer: "Sim, desenvolvemos sites com painéis administrativos intuitivos e oferecemos treinamento para que você possa gerenciar seu conteúdo facilmente."
+      question:
+        "Vou conseguir fazer alterações no meu próprio site sem dificuldades?",
+      answer:
+        "Sim, desenvolvemos sites com painéis administrativos intuitivos e oferecemos treinamento para que você possa gerenciar seu conteúdo facilmente.",
     },
     {
       question: "Site One Page é bom para minha empresa?",
-      answer: "Sites One Page são excelentes para empresas que desejam apresentar suas informações de forma direta e objetiva. São ideais para negócios que não necessitam de muitas páginas internas."
+      answer:
+        "Sites One Page são excelentes para empresas que desejam apresentar suas informações de forma direta e objetiva. São ideais para negócios que não necessitam de muitas páginas internas.",
     },
     {
       question: "Quais funcionalidades adicionais vocês oferecem?",
-      answer: "Oferecemos diversas funcionalidades como formulários de contato, integração com redes sociais, chat online, otimização SEO, área administrativa, blog, galeria de fotos e mais."
+      answer:
+        "Oferecemos diversas funcionalidades como formulários de contato, integração com redes sociais, chat online, otimização SEO, área administrativa, blog, galeria de fotos e mais.",
     },
     {
       question: "Meu site será responsivo em dispositivos móveis?",
-      answer: "Sim, todos os nossos sites são desenvolvidos com design responsivo, garantindo uma excelente experiência em qualquer dispositivo (computadores, tablets e smartphones)."
+      answer:
+        "Sim, todos os nossos sites são desenvolvidos com design responsivo, garantindo uma excelente experiência em qualquer dispositivo (computadores, tablets e smartphones).",
     },
     {
       question: "Quanto tempo demora para se criar um site?",
-      answer: "O prazo médio é de 30 a 45 dias, podendo variar de acordo com a complexidade do projeto e a agilidade na entrega dos conteúdos."
+      answer:
+        "O prazo médio é de 30 a 45 dias, podendo variar de acordo com a complexidade do projeto e a agilidade na entrega dos conteúdos.",
     },
     {
       question: "Um site de sucesso precisará de atualizações frequentes?",
-      answer: "Sim, recomendamos atualizações regulares tanto de conteúdo quanto de tecnologia para manter seu site seguro, atual e bem posicionado nos buscadores."
-    }
+      answer:
+        "Sim, recomendamos atualizações regulares tanto de conteúdo quanto de tecnologia para manter seu site seguro, atual e bem posicionado nos buscadores.",
+    },
   ];
 
   return (
@@ -147,7 +157,7 @@ const Servicos = () => {
 
       <section className="portfolio-section">
         <h2>Portfólio por Segmento</h2>
-        <div className="categorias-filtro">
+        {/* TODO: <div className="categorias-filtro">
           <button
             className={categoriaAtiva === "todos" ? "ativo" : ""}
             onClick={() => setCategoriaAtiva("todos")}
@@ -166,9 +176,9 @@ const Servicos = () => {
           >
             Manutenção
           </button>
-        </div>
+        </div> */}
 
-        <div className="portfolio-grid">
+        {/* TODO: <div className="portfolio-grid">
           {portfolioCategorias
             .filter((item) => item.categorias.includes(categoriaAtiva))
             .map((item, index) => (
@@ -180,7 +190,7 @@ const Servicos = () => {
                 <button className="portfolio-btn">Ver Exemplos</button>
               </div>
             ))}
-        </div>
+        </div> */}
       </section>
 
       <section className="solicitar-site">
@@ -254,15 +264,21 @@ const Servicos = () => {
 
         <div className="faq-container">
           {faqQuestions.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`faq-item ${activeQuestion === index ? 'active' : ''}`}
+            <div
+              key={index}
+              className={`faq-item ${activeQuestion === index ? "active" : ""}`}
             >
-              <div 
+              <div
                 className="faq-question"
-                onClick={() => setActiveQuestion(activeQuestion === index ? null : index)}
+                onClick={() =>
+                  setActiveQuestion(activeQuestion === index ? null : index)
+                }
               >
-                <h3 style={{ color: activeQuestion === index ? '#FF6B6B' : '#333' }}>
+                <h3
+                  style={{
+                    color: activeQuestion === index ? "#FF6B6B" : "#333",
+                  }}
+                >
                   {faq.question}
                 </h3>
                 <button className="faq-toggle">
@@ -273,7 +289,11 @@ const Servicos = () => {
                   )}
                 </button>
               </div>
-              <div className={`faq-answer ${activeQuestion === index ? 'show' : ''}`}>
+              <div
+                className={`faq-answer ${
+                  activeQuestion === index ? "show" : ""
+                }`}
+              >
                 <p>{faq.answer}</p>
               </div>
             </div>

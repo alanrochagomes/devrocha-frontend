@@ -370,7 +370,7 @@
 .saiba-mais {
   display: inline-block;
   margin-top: 1.5rem;
-  color: #ff4d4d;
+  color: #0066cc;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -429,7 +429,7 @@
 .play-button {
   width: 60px;
   height: 60px;
-  background: #ff4d4d;
+  background: #0066cc;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -529,4 +529,146 @@
   color: white;
   padding: 6rem 8%;
   text-align: center;
+}
+
+/* Seção de Resultados */
+.resultados-section {
+  padding: 6rem 8%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.resultados-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resultados-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.resultado-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.resultado-card:hover {
+  transform: translateY(-10px);
+}
+
+.resultado-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.resultado-stats {
+  margin-bottom: 1.5rem;
+}
+
+.stats-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0066cc;
+  display: block;
+}
+
+.resultado-info h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.resultado-info p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Seção de Métricas */
+.metricas-section {
+  padding: 6rem 8%;
+  background: #ffffff;
+}
+
+.metricas-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.metricas-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.metrica-card {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.metrica-card:hover {
+  transform: translateY(-5px);
+}
+
+.metrica-valor {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 1rem;
+}
+
+.contador {
+  display: inline-block;
+}
+
+.metrica-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.metrica-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .resultados-section,
+  .metricas-section {
+    padding: 4rem 5%;
+  }
+
+  .resultados-content h2,
+  .metricas-content h2 {
+    font-size: 2rem;
+  }
+
+  .stats-number {
+    font-size: 2rem;
+  }
+
+  .metrica-valor {
+    font-size: 2.5rem;
+  }
 }

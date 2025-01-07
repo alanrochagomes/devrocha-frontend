@@ -49,12 +49,10 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content" data-aos="fade-right">
           <h1>
-            Como deixar o cliente chegar até você sem precisar correr atrás?
+            Cresça online com nossos serviços de design e desenvolvimento web
+            personalizados.
           </h1>
-          <p>
-            Transforme sua presença digital e aumente suas vendas com
-            estratégias personalizadas de marketing
-          </p>
+          <p>Cuidamos do seu site para que você possa cuidar do seu negócio.</p>
           <div className="hero-buttons">
             <Link to="/contato" className="btn-primary">
               Fale com um especialista
@@ -118,7 +116,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="depoimentos-section" data-aos="fade-up">
+      {/* TODO: <section className="depoimentos-section" data-aos="fade-up">
         <div className="depoimentos-content">
           <h2>O que os nossos clientes estão falando!</h2>
           <div className="depoimentos-grid">
@@ -153,46 +151,225 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="marcas-section" data-aos="fade-up">
-        <h2>Marcas em nossa história</h2>
-        <div className="marcas-container">
-          <div className="marcas-grid">
-            <img src="/path-to-logo1.png" alt="Logo 1" className="marca-logo" />
-            <img src="/path-to-logo2.png" alt="Logo 2" className="marca-logo" />
-            <img src="/path-to-logo3.png" alt="Logo 3" className="marca-logo" />
-          </div>
-          <div className="avaliacoes-container">
-            <div className="avaliacao-item">
-              <div className="stars">⭐⭐⭐⭐⭐</div>
-              <p>Excelente serviço</p>
-              <img
-                src="/google-reviews.png"
-                alt="Google Reviews"
-                className="review-source"
-              />
+      <section className="resultados-section" data-aos="fade-up">
+        <div className="resultados-content">
+          <h2>Resultados que Transformam Negócios</h2>
+          <div className="resultados-grid">
+            <div className="resultado-card" data-aos="fade-up">
+              <div className="resultado-icon">📈</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+150%</span>
+                <p>Aumento em Vendas</p>
+              </div>
+              <div className="resultado-info">
+                <h3>E-commerce Moda</h3>
+                <p>
+                  Aumento significativo em vendas após 6 meses de estratégia
+                  digital
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="resultado-icon">🎯</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+300%</span>
+                <p>Leads Qualificados</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Empresa B2B</h3>
+                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="resultado-icon">👥</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+200%</span>
+                <p>Seguidores</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Influenciador Digital</h3>
+                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="servicos-grid" data-aos="fade-up">
-        <h2>Tudo o que o Seu Negócio Precisa para Crescer Está Aqui!</h2>
-        <div className="grid-container">
-          <div className="servico-item" data-aos="fade-up">
-            <div className="servico-icon">📊</div>
-            <h3>Estratégias em Marketing Digital</h3>
-            <p>Planejamento estratégico para alcançar seus objetivos</p>
+      <section className="resultados-section" data-aos="fade-up">
+        <div className="resultados-content">
+          <h2>Resultados que Transformam Negócios</h2>
+          <div className="resultados-grid">
+            <div className="resultado-card" data-aos="fade-up">
+              <div className="resultado-icon">📈</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+150%</span>
+                <p>Aumento em Vendas</p>
+              </div>
+              <div className="resultado-info">
+                <h3>E-commerce Moda</h3>
+                <p>
+                  Aumento significativo em vendas após 6 meses de estratégia
+                  digital
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="resultado-icon">🎯</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+300%</span>
+                <p>Leads Qualificados</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Empresa B2B</h3>
+                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="resultado-icon">👥</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+200%</span>
+                <p>Seguidores</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Influenciador Digital</h3>
+                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
+              </div>
+            </div>
           </div>
-          {/* Adicione os outros serviços seguindo o mesmo padrão */}
         </div>
       </section>
 
+      <section className="resultados-section" data-aos="fade-up">
+        <div className="resultados-content">
+          <h2>Resultados que Transformam Negócios</h2>
+          <div className="resultados-grid">
+            <div className="resultado-card" data-aos="fade-up">
+              <div className="resultado-icon">📈</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+150%</span>
+                <p>Aumento em Vendas</p>
+              </div>
+              <div className="resultado-info">
+                <h3>E-commerce Moda</h3>
+                <p>
+                  Aumento significativo em vendas após 6 meses de estratégia
+                  digital
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="resultado-icon">🎯</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+300%</span>
+                <p>Leads Qualificados</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Empresa B2B</h3>
+                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
+              </div>
+            </div>
+
+            <div
+              className="resultado-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="resultado-icon">👥</div>
+              <div className="resultado-stats">
+                <span className="stats-number">+200%</span>
+                <p>Seguidores</p>
+              </div>
+              <div className="resultado-info">
+                <h3>Influenciador Digital</h3>
+                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TODO: <section className="metricas-section" data-aos="fade-up">
+        <div className="metricas-content">
+          <h2>Números que Comprovam Nossa Excelência</h2>
+          <div className="metricas-grid">
+            <div className="metrica-card" data-aos="fade-up">
+              <div className="metrica-valor">
+                <span className="contador">50</span>%
+              </div>
+              <h3>Satisfação</h3>
+              <p>Clientes satisfeitos com nossos serviços</p>
+            </div>
+
+            <div
+              className="metrica-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="metrica-valor">
+                <span className="contador">10</span>+
+              </div>
+              <h3>Projetos</h3>
+              <p>Projetos entregues com sucesso</p>
+            </div>
+
+            <div
+              className="metrica-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="metrica-valor">
+                <span className="contador">3</span>+
+              </div>
+              <h3>Anos</h3>
+              <p>De experiência no mercado</p>
+            </div>
+
+            <div
+              className="metrica-card"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="metrica-valor">
+                <span className="contador">50</span>M
+              </div>
+              <h3>Investidos</h3>
+              <p>Em campanhas gerenciadas</p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
       <section className="cta-final" data-aos="fade-up">
         <div className="cta-content">
-          <h2>AGÊNCIA DE MARKETING DIGITAL</h2>
-          <p>Transforme seus negócios por meio da comunicação.</p>
+          <h2>MANUTENÇÃO DE SITES</h2>
+          <p>Garantindo desempenho, segurança e atualizações constantes.</p>
           <Link to="/contato" className="cta-button">
             Fale com um especialista
           </Link>
