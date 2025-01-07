@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <h1>NettCorpSolutions</h1>
+          <h1 className="logo-name">NettCorpSolutions</h1>
         </div>
         <div className="menu-icon" onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -64,22 +64,26 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            {!isLoggedIn ? (
-              <Link to="/login" className="nav-link" onClick={toggleMenu}>
-                Área do Cliente
-              </Link>
-            ) : (
+            {isLoggedIn ? (
               <div className="user-info">
-                <img
+                {/* <img
                   src={user.profilePicture}
                   alt="Foto de Perfil"
                   className="user-avatar"
-                />
-                <span>{user.name}</span>
-                <span>{user.email}</span>
-                <span className="user-time">11:49 BRT</span>
-                <button onClick={handleLogout}>Sair</button>
+                /> */}
+                <div className="user-details">
+                  <span className="user-name">{user.name}</span>
+                  <span className="user-email">{user.email}</span>
+                  <span className="user-time">11:49 BRT</span>
+                </div>
+                <button onClick={handleLogout} className="logout-button">
+                  Sair
+                </button>
               </div>
+            ) : (
+              <Link to="/login" className="nav-link" onClick={toggleMenu}>
+                Área do Cliente
+              </Link>
             )}
           </li>
         </ul>
