@@ -1,14 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
+import DropdownUserMenu from "../conta/DropdownUserMenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setUser(null);
+    navigate("/login");
+  };
+
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuthenticated");
+    setIsLoggedIn(authStatus === "true");
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+    if (userData) {
+      setUser(userData);
+    }
+  }, []);
 
   return (
     <nav className="navbar">
@@ -26,39 +48,40 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-
           <li className="nav-item">
             <Link to="/servicos" className="nav-link" onClick={toggleMenu}>
               Serviços
             </Link>
           </li>
-
           <li className="nav-item">
             <Link to="/portfolio" className="nav-link" onClick={toggleMenu}>
               Projetos
             </Link>
           </li>
-
-          {/* TODO: <li className="nav-item">
-            <Link
-              to="/identidade-visual"
-              className="nav-link"
-              onClick={toggleMenu}
-            >
-              Identidade Visual
-            </Link>
-          </li> */}
-
           <li className="nav-item">
             <Link to="/contato" className="nav-link" onClick={toggleMenu}>
               Contato
             </Link>
           </li>
-          {/* <li className="nav-item">
-            <Link to="/about" className="nav-link" onClick={toggleMenu}>
-              Quem Somos
-            </Link>
-          </li> */}
+          <li className="nav-item">
+            {!isLoggedIn ? (
+              <Link to="/login" className="nav-link" onClick={toggleMenu}>
+                Área do Cliente
+              </Link>
+            ) : (
+              <div className="user-info">
+                <img
+                  src={user.profilePicture}
+                  alt="Foto de Perfil"
+                  className="user-avatar"
+                />
+                <span>{user.name}</span>
+                <span>{user.email}</span>
+                <span className="user-time">11:49 BRT</span>
+                <button onClick={handleLogout}>Sair</button>
+              </div>
+            )}
+          </li>
         </ul>
       </div>
     </nav>
