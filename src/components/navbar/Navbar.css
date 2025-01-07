@@ -18,7 +18,6 @@
   font-weight: bold;
 }
 
-/* Desktop Menu Styles */
 .desktop-menu {
   display: flex;
   justify-content: space-between;
@@ -50,7 +49,6 @@
   border-radius: 4px;
 }
 
-/* Mobile Menu Styles */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -103,7 +101,6 @@
   text-decoration: none;
 }
 
-/* Dropdown Styles */
 .dropdown {
   position: relative;
 }
@@ -155,7 +152,6 @@
   transform: rotate(180deg);
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;

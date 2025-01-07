@@ -42,7 +42,6 @@ const Navbar = ({ user, setUser }) => {
         </button>
       </div>
 
-      {/* Menu móvel */}
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <div className="mobile-menu-header">
@@ -58,7 +57,7 @@ const Navbar = ({ user, setUser }) => {
             <Link to="/servicos" onClick={toggleMobileMenu}>
               Serviços
             </Link>
-            <Link to="/projetos" onClick={toggleMobileMenu}>
+            <Link to="/portfolio" onClick={toggleMobileMenu}>
               Projetos
             </Link>
             <Link to="/contato" onClick={toggleMobileMenu}>
@@ -89,12 +88,11 @@ const Navbar = ({ user, setUser }) => {
         </div>
       )}
 
-      {/* Menu desktop */}
       <div className="desktop-menu">
         <div className="navbar-links">
           <Link to="/">Home</Link>
           <Link to="/servicos">Serviços</Link>
-          <Link to="/projetos">Projetos</Link>
+          <Link to="/portfolio">Projetos</Link>
           <Link to="/contato">Contato</Link>
         </div>
         <div className="navbar-auth">
