@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { FaChevronDown } from "react-icons/fa";
 
 const Navbar = ({ user, setUser }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -107,6 +108,9 @@ const Navbar = ({ user, setUser }) => {
                   onClick={toggleDropdown}
                 >
                   {JSON.parse(localStorage.getItem("user"))?.name || "Usuário"}
+                  <FaChevronDown
+                    className={`chevron-icon ${isDropdownOpen ? "rotate" : ""}`}
+                  />
                 </button>
                 {isDropdownOpen && (
                   <ul className="dropdown-menu dropdown-menu-dark show">

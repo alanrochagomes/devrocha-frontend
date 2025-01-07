@@ -114,6 +114,9 @@
   color: white;
   cursor: pointer;
   padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .dropdown-menu {
@@ -141,6 +144,15 @@
 
 .dropdown-item:hover {
   background-color: #333;
+}
+
+.chevron-icon {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
 }
 
 /* Responsive Styles */
