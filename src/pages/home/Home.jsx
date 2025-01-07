@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
+import banner from "../../assets/img/NettCorpSolutions - logo.png";
 
 const Home = () => {
   useEffect(() => {
@@ -62,7 +63,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image" data-aos="fade-left">
-          <img src="/images/hero-illustration.svg" alt="Desenvolvimento Web" />
+          <img src={banner} alt="Desenvolvimento Web" />
         </div>
       </section>
 
