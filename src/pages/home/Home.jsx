@@ -8,9 +8,9 @@ import banner from "../../assets/img/NettCorpSolutions - logo.png";
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
+      duration: 1200,
+      once: false,
+      offset: 200,
     });
   }, []);
 
@@ -48,134 +48,155 @@ const Home = () => {
     <div className="home-container">
       <section className="hero-section">
         <div className="hero-content" data-aos="fade-right">
-          <h1>Transforme sua presença digital</h1>
+          <h1>
+            Como deixar o cliente chegar até você sem precisar correr atrás?
+          </h1>
           <p>
-            Desenvolvimento de sites profissionais e soluções em TI que
-            impulsionam seu negócio
+            Transforme sua presença digital e aumente suas vendas com
+            estratégias personalizadas de marketing
           </p>
           <div className="hero-buttons">
             <Link to="/contato" className="btn-primary">
-              Solicitar Orçamento
-            </Link>
-            <Link to="/portfolio" className="btn-secondary">
-              Ver Projetos
+              Fale com um especialista
             </Link>
           </div>
         </div>
-        <div className="hero-image" data-aos="fade-left">
-          <img src={banner} alt="Desenvolvimento Web" />
-        </div>
       </section>
 
-      <section className="beneficios-section">
-        <h2 data-aos="fade-up">Por que escolher nossos serviços?</h2>
+      <section className="sobre-section" data-aos="fade-up">
+        <div className="sobre-content">
+          <h2>Sobre nós</h2>
+          <div className="sobre-text-content">
+            <p>
+              Somos uma empresa especializada em Marketing Digital que atende
+              seu interesse em crescer no mercado digital. Nossa equipe de
+              profissionais qualificados desenvolve estratégias sob medida para
+              cada cliente, garantindo o melhor retorno sobre o investimento.
+            </p>
+          </div>
+        </div>
+
         <div className="beneficios-grid">
-          {beneficios.map((beneficio, index) => (
-            <div
-              key={index}
-              className="beneficio-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <span className="beneficio-icon">{beneficio.icon}</span>
-              <h3>{beneficio.titulo}</h3>
-              <p>{beneficio.descricao}</p>
+          <div className="beneficio-card" data-aos="fade-up">
+            <div className="card-icon">💡</div>
+            <h3>Planos de Marketing Digital</h3>
+            <p>Estratégias personalizadas para seu negócio crescer</p>
+            <Link to="/portfolio" className="saiba-mais">
+              Ver Sobre Portfolio →
+            </Link>
+          </div>
+
+          <div
+            className="beneficio-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div className="card-icon">🎯</div>
+            <h3>Segmentação precisa</h3>
+            <p>Alcance exatamente seu público-alvo ideal</p>
+          </div>
+
+          <div
+            className="beneficio-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div className="card-icon">📊</div>
+            <h3>Resultados mensuráveis</h3>
+            <p>Acompanhe métricas e resultados em tempo real</p>
+          </div>
+
+          <div
+            className="beneficio-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div className="card-icon">🚀</div>
+            <h3>Estratégias personalizadas</h3>
+            <p>Soluções sob medida para cada negócio</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="depoimentos-section" data-aos="fade-up">
+        <div className="depoimentos-content">
+          <h2>O que os nossos clientes estão falando!</h2>
+          <div className="depoimentos-grid">
+            <div className="depoimento-video" data-aos="fade-up">
+              <div className="video-container">
+                <div className="video-placeholder">
+                  <div className="play-button">▶</div>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="servicos-principais">
-        <h2 data-aos="fade-up">Nossos Serviços</h2>
-        <div className="servicos-cards">
-          <div className="servico-card" data-aos="fade-up" data-aos-delay="0">
-            <div className="servico-icon">💻</div>
-            <h3>Criação de Sites</h3>
-            <p>
-              Sites profissionais, blogs, portfólios e landing pages otimizados
-              e responsivos.
-            </p>
-            <Link to="/servicos" className="servico-link">
-              Saiba mais →
-            </Link>
-          </div>
-
-          <div className="servico-card" data-aos="fade-up" data-aos-delay="100">
-            <div className="servico-icon">🛍️</div>
-            <h3>E-commerce</h3>
-            <p>
-              Lojas virtuais completas com gestão de produtos, pagamentos e
-              entregas.
-            </p>
-            <Link to="/servicos" className="servico-link">
-              Saiba mais →
-            </Link>
-          </div>
-
-          <div className="servico-card" data-aos="fade-up" data-aos-delay="200">
-            <div className="servico-icon">🔧</div>
-            <h3>Manutenção</h3>
-            <p>
-              Suporte técnico, atualizações de segurança e backup para seu site.
-            </p>
-            <Link to="/servicos" className="servico-link">
-              Saiba mais →
-            </Link>
+            <div
+              className="depoimento-video"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="video-container">
+                <div className="video-placeholder">
+                  <div className="play-button">▶</div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="depoimento-video"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="video-container">
+                <div className="video-placeholder">
+                  <div className="play-button">▶</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="cta-section" data-aos="fade-up">
+      <section className="marcas-section" data-aos="fade-up">
+        <h2>Marcas em nossa história</h2>
+        <div className="marcas-container">
+          <div className="marcas-grid">
+            <img src="/path-to-logo1.png" alt="Logo 1" className="marca-logo" />
+            <img src="/path-to-logo2.png" alt="Logo 2" className="marca-logo" />
+            <img src="/path-to-logo3.png" alt="Logo 3" className="marca-logo" />
+          </div>
+          <div className="avaliacoes-container">
+            <div className="avaliacao-item">
+              <div className="stars">⭐⭐⭐⭐⭐</div>
+              <p>Excelente serviço</p>
+              <img
+                src="/google-reviews.png"
+                alt="Google Reviews"
+                className="review-source"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="servicos-grid" data-aos="fade-up">
+        <h2>Tudo o que o Seu Negócio Precisa para Crescer Está Aqui!</h2>
+        <div className="grid-container">
+          <div className="servico-item" data-aos="fade-up">
+            <div className="servico-icon">📊</div>
+            <h3>Estratégias em Marketing Digital</h3>
+            <p>Planejamento estratégico para alcançar seus objetivos</p>
+          </div>
+          {/* Adicione os outros serviços seguindo o mesmo padrão */}
+        </div>
+      </section>
+
+      <section className="cta-final" data-aos="fade-up">
         <div className="cta-content">
-          <h2>Pronto para começar seu projeto?</h2>
-          <p>
-            Transforme suas ideias em realidade com nossa expertise em
-            desenvolvimento web
-          </p>
+          <h2>AGÊNCIA DE MARKETING DIGITAL</h2>
+          <p>Transforme seus negócios por meio da comunicação.</p>
           <Link to="/contato" className="cta-button">
-            Fale Conosco
+            Fale com um especialista
           </Link>
         </div>
-      </section>
-
-      <section className="tecnologias-section">
-        <h2 data-aos="fade-up">Tecnologias que utilizamos</h2>
-        <div className="tecnologias-grid">
-          {tecnologias.map((tech, index) => (
-            <div
-              key={index}
-              className="tecnologia-card"
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
-            >
-              <img src={tech.imagem} alt={tech.nome} />
-              <span>{tech.nome}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="numeros-section">
-        {["100+", "95%", "24/7", "5+"].map((numero, index) => (
-          <div
-            key={index}
-            className="numero-item"
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-          >
-            <h3>{numero}</h3>
-            <p>
-              {
-                [
-                  "Projetos Entregues",
-                  "Clientes Satisfeitos",
-                  "Suporte Técnico",
-                  "Anos de Experiência",
-                ][index]
-              }
-            </p>
-          </div>
-        ))}
       </section>
     </div>
   );
