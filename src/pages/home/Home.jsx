@@ -5,6 +5,23 @@ import "aos/dist/aos.css";
 import "./Home.css";
 import banner from "../../assets/img/NettCorpSolutions - logo.png";
 
+const WhatsAppButton = () => {
+  const message =
+    "Olá! Sou Alan da equipe NettCorpSolutions. estou à disposição para ajudá-lo(a). Como posso ajudar?";
+  const encodedMessage = encodeURIComponent(message);
+
+  return (
+    <a
+      href={`https://wa.me/5521998579960?text=${encodedMessage}`}
+      className="whatsapp-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i className="fab fa-whatsapp"></i>
+    </a>
+  );
+};
+
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -16,32 +33,34 @@ const Home = () => {
 
   const beneficios = [
     {
-      icon: "🚀",
-      titulo: "Sites Rápidos",
-      descricao: "Desenvolvimento otimizado para carregar em segundos",
+      icon: "���",
+      titulo: "Desenvolvimento Web",
+      descricao: "Sites e sistemas modernos e personalizados",
     },
     {
-      icon: "📱",
-      titulo: "100% Responsivo",
-      descricao: "Seu site perfeito em todos os dispositivos",
+      icon: "🛠️",
+      titulo: "Manutenção",
+      descricao: "Suporte técnico e atualizações constantes",
+    },
+    {
+      icon: "🎨",
+      titulo: "Design UI/UX",
+      descricao: "Interfaces intuitivas e experiências memoráveis",
     },
     {
       icon: "🔒",
-      titulo: "Segurança Total",
-      descricao: "Proteção contra ameaças e backups automáticos",
-    },
-    {
-      icon: "🎯",
-      titulo: "SEO Otimizado",
-      descricao: "Melhor posicionamento no Google",
+      titulo: "Segurança",
+      descricao: "Proteção de dados e backups automáticos",
     },
   ];
 
   const tecnologias = [
     { nome: "React", imagem: "/images/tech/react.png" },
     { nome: "Node.js", imagem: "/images/tech/nodejs.png" },
-    { nome: "WordPress", imagem: "/images/tech/wordpress.png" },
-    { nome: "Laravel", imagem: "/images/tech/laravel.png" },
+    { nome: "Python", imagem: "/images/tech/python.png" },
+    { nome: "AWS", imagem: "/images/tech/aws.png" },
+    { nome: "Docker", imagem: "/images/tech/docker.png" },
+    { nome: "MongoDB", imagem: "/images/tech/mongodb.png" },
   ];
 
   return (
@@ -49,13 +68,13 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content" data-aos="fade-right">
           <h1>
-            Cresça online com nossos serviços de design e desenvolvimento web
-            personalizados.
+            Soluções completas em Desenvolvimento, Manutenção e Design para sua
+            empresa
           </h1>
-          <p>Cuidamos do seu site para que você possa cuidar do seu negócio.</p>
+          <p>Transformando ideias em soluções tecnológicas de alto impacto</p>
           <div className="hero-buttons">
             <Link to="/contato" className="btn-primary">
-              Fale com um especialista
+              Solicite um orçamento
             </Link>
           </div>
         </div>
@@ -66,21 +85,21 @@ const Home = () => {
           <h2>Sobre nós</h2>
           <div className="sobre-text-content">
             <p>
-              Somos uma empresa especializada em Marketing Digital que atende
-              seu interesse em crescer no mercado digital. Nossa equipe de
-              profissionais qualificados desenvolve estratégias sob medida para
-              cada cliente, garantindo o melhor retorno sobre o investimento.
+              Desenvolvimento de software, manutenção de sistemas e design de
+              interfaces. Nossa equipe de desenvolvedores e designers trabalha
+              com as tecnologias mais modernas do mercado para entregar soluções
+              robustas e escaláveis.
             </p>
           </div>
         </div>
 
         <div className="beneficios-grid">
           <div className="beneficio-card" data-aos="fade-up">
-            <div className="card-icon">💡</div>
-            <h3>Planos de Marketing Digital</h3>
-            <p>Estratégias personalizadas para seu negócio crescer</p>
-            <Link to="/portfolio" className="saiba-mais">
-              Ver Sobre Portfolio →
+            <div className="card-icon">💻</div>
+            <h3>Desenvolvimento Web</h3>
+            <p>Sites, sistemas e aplicações web sob medida</p>
+            <Link to="/servicos" className="saiba-mais">
+              Conheça nossos serviços →
             </Link>
           </div>
 
@@ -89,9 +108,9 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div className="card-icon">🎯</div>
-            <h3>Segmentação precisa</h3>
-            <p>Alcance exatamente seu público-alvo ideal</p>
+            <div className="card-icon">🛠️</div>
+            <h3>Manutenção de Sistemas</h3>
+            <p>Suporte técnico especializado e atualizações</p>
           </div>
 
           <div
@@ -99,9 +118,9 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div className="card-icon">📊</div>
-            <h3>Resultados mensuráveis</h3>
-            <p>Acompanhe métricas e resultados em tempo real</p>
+            <div className="card-icon">🎨</div>
+            <h3>Design UI/UX</h3>
+            <p>Interfaces modernas e experiências incríveis</p>
           </div>
 
           <div
@@ -109,120 +128,26 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div className="card-icon">🚀</div>
-            <h3>Estratégias personalizadas</h3>
-            <p>Soluções sob medida para cada negócio</p>
-          </div>
-        </div>
-      </section>
-
-      {/* TODO: <section className="depoimentos-section" data-aos="fade-up">
-        <div className="depoimentos-content">
-          <h2>O que os nossos clientes estão falando!</h2>
-          <div className="depoimentos-grid">
-            <div className="depoimento-video" data-aos="fade-up">
-              <div className="video-container">
-                <div className="video-placeholder">
-                  <div className="play-button">▶</div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="depoimento-video"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="video-container">
-                <div className="video-placeholder">
-                  <div className="play-button">▶</div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="depoimento-video"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="video-container">
-                <div className="video-placeholder">
-                  <div className="play-button">▶</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      <section className="resultados-section" data-aos="fade-up">
-        <div className="resultados-content">
-          <h2>Resultados que Transformam Negócios</h2>
-          <div className="resultados-grid">
-            <div className="resultado-card" data-aos="fade-up">
-              <div className="resultado-icon">📈</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+150%</span>
-                <p>Aumento em Vendas</p>
-              </div>
-              <div className="resultado-info">
-                <h3>E-commerce Moda</h3>
-                <p>
-                  Aumento significativo em vendas após 6 meses de estratégia
-                  digital
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="resultado-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="resultado-icon">🎯</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+300%</span>
-                <p>Leads Qualificados</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Empresa B2B</h3>
-                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
-              </div>
-            </div>
-
-            <div
-              className="resultado-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="resultado-icon">👥</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+200%</span>
-                <p>Seguidores</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Influenciador Digital</h3>
-                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
-              </div>
-            </div>
+            <div className="card-icon">📱</div>
+            <h3>Aplicações Responsivas</h3>
+            <p>Sistemas adaptados para todos os dispositivos</p>
           </div>
         </div>
       </section>
 
       <section className="resultados-section" data-aos="fade-up">
         <div className="resultados-content">
-          <h2>Resultados que Transformam Negócios</h2>
+          <h2>Nossos Resultados</h2>
           <div className="resultados-grid">
             <div className="resultado-card" data-aos="fade-up">
-              <div className="resultado-icon">📈</div>
+              <div className="resultado-icon">💻</div>
               <div className="resultado-stats">
-                <span className="stats-number">+150%</span>
-                <p>Aumento em Vendas</p>
+                <span className="stats-number">+50</span>
+                <p>Projetos Entregues</p>
               </div>
               <div className="resultado-info">
-                <h3>E-commerce Moda</h3>
-                <p>
-                  Aumento significativo em vendas após 6 meses de estratégia
-                  digital
-                </p>
+                <h3>Desenvolvimento Web</h3>
+                <p>Sites e sistemas desenvolvidos com excelência</p>
               </div>
             </div>
 
@@ -231,14 +156,14 @@ const Home = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div className="resultado-icon">🎯</div>
+              <div className="resultado-icon">🛠️</div>
               <div className="resultado-stats">
-                <span className="stats-number">+300%</span>
-                <p>Leads Qualificados</p>
+                <span className="stats-number">+100</span>
+                <p>Clientes Atendidos</p>
               </div>
               <div className="resultado-info">
-                <h3>Empresa B2B</h3>
-                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
+                <h3>Suporte Técnico</h3>
+                <p>Manutenção e suporte contínuo</p>
               </div>
             </div>
 
@@ -247,134 +172,50 @@ const Home = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div className="resultado-icon">👥</div>
+              <div className="resultado-icon">🎨</div>
               <div className="resultado-stats">
-                <span className="stats-number">+200%</span>
-                <p>Seguidores</p>
+                <span className="stats-number">+30</span>
+                <p>Designs Criados</p>
               </div>
               <div className="resultado-info">
-                <h3>Influenciador Digital</h3>
-                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
+                <h3>UI/UX Design</h3>
+                <p>Interfaces modernas e intuitivas</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="resultados-section" data-aos="fade-up">
-        <div className="resultados-content">
-          <h2>Resultados que Transformam Negócios</h2>
-          <div className="resultados-grid">
-            <div className="resultado-card" data-aos="fade-up">
-              <div className="resultado-icon">📈</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+150%</span>
-                <p>Aumento em Vendas</p>
-              </div>
-              <div className="resultado-info">
-                <h3>E-commerce Moda</h3>
-                <p>
-                  Aumento significativo em vendas após 6 meses de estratégia
-                  digital
-                </p>
-              </div>
-            </div>
-
+      <section className="tecnologias-section" data-aos="fade-up">
+        <h2>Tecnologias que utilizamos</h2>
+        <div className="tecnologias-grid">
+          {tecnologias.map((tech, index) => (
             <div
-              className="resultado-card"
+              key={tech.nome}
+              className="tecnologia-card"
               data-aos="fade-up"
-              data-aos-delay="100"
+              data-aos-delay={index * 100}
             >
-              <div className="resultado-icon">🎯</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+300%</span>
-                <p>Leads Qualificados</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Empresa B2B</h3>
-                <p>Triplicamos a geração de leads qualificados em 3 meses</p>
-              </div>
+              <img src={tech.imagem} alt={tech.nome} />
+              <p>{tech.nome}</p>
             </div>
-
-            <div
-              className="resultado-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="resultado-icon">👥</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+200%</span>
-                <p>Seguidores</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Influenciador Digital</h3>
-                <p>Crescimento orgânico nas redes sociais em 4 meses</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
-
-      {/* TODO: <section className="metricas-section" data-aos="fade-up">
-        <div className="metricas-content">
-          <h2>Números que Comprovam Nossa Excelência</h2>
-          <div className="metricas-grid">
-            <div className="metrica-card" data-aos="fade-up">
-              <div className="metrica-valor">
-                <span className="contador">50</span>%
-              </div>
-              <h3>Satisfação</h3>
-              <p>Clientes satisfeitos com nossos serviços</p>
-            </div>
-
-            <div
-              className="metrica-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="metrica-valor">
-                <span className="contador">10</span>+
-              </div>
-              <h3>Projetos</h3>
-              <p>Projetos entregues com sucesso</p>
-            </div>
-
-            <div
-              className="metrica-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="metrica-valor">
-                <span className="contador">3</span>+
-              </div>
-              <h3>Anos</h3>
-              <p>De experiência no mercado</p>
-            </div>
-
-            <div
-              className="metrica-card"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="metrica-valor">
-                <span className="contador">50</span>M
-              </div>
-              <h3>Investidos</h3>
-              <p>Em campanhas gerenciadas</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="cta-final" data-aos="fade-up">
         <div className="cta-content">
-          <h2>MANUTENÇÃO DE SITES</h2>
-          <p>Garantindo desempenho, segurança e atualizações constantes.</p>
+          <h2>Transforme sua presença digital</h2>
+          <p>
+            Desenvolvimento, manutenção e design de alta qualidade para seu
+            negócio
+          </p>
           <Link to="/contato" className="cta-button">
-            Fale com um especialista
+            Solicite um orçamento
           </Link>
         </div>
       </section>
+      <WhatsAppButton />
     </div>
   );
 };
