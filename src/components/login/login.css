@@ -61,7 +61,6 @@
   width: 100%;
 }
 
-/* Ajuste para campos de endereço em telas menores */
 @media screen and (max-width: 576px) {
   .form-card {
     padding: 1rem;

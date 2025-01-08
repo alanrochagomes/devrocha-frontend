@@ -38,6 +38,7 @@ export const authAPI = {
         name: userData.name,
         email: userData.email,
         password: userData.password,
+        telefone: userData.telefone,
         tipoPessoa: userData.tipoPessoa,
         cpfCnpj: userData.cpfCnpj,
         endereco: {
