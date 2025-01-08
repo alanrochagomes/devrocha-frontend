@@ -1,17 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../footer/Footer.css";
+import ssl from "../../assets/img/ssl.png";
+import GoogleSafeBrowsing from "../../assets/img/Google Safe Browsing.png";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-section">
-          <h3>Sobre Nós</h3>
-          <p>
-            Consultoria especializada em desenvolvimento web e soluções
-            tecnológicas.
-          </p>
+        <div className="footer-top">
+          <div className="footer-section">
+            <h3>Sobre Nós</h3>
+            <p>
+              Consultoria especializada em desenvolvimento web e soluções
+              tecnológicas.
+            </p>
+          </div>
+
+          <div className="footer-section">
+            <h3>Segurança</h3>
+            <div className="security-seals">
+              <img src={ssl} alt="SSL Certificate" className="security-seal" />
+              <img
+                src={GoogleSafeBrowsing}
+                alt="Google Safe Browsing"
+                className="security-seal"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="footer-section">

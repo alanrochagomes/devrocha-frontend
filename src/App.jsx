@@ -10,7 +10,7 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import Login from "./components/login/login";
 import ForgotPassword from "./components/login/ForgotPassword";
 import ResetPassword from "./components/login/ForgotPassword";
-import PrivacyPolicy from "./components/privacy/PrivacyPolicy";
+import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import About from "./components/about/About";
 
 const App = () => {
