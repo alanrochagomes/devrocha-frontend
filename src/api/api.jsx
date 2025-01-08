@@ -104,6 +104,19 @@ export const authAPI = {
       throw error;
     }
   },
+
+  // Adicionar método para resetar senha
+  requestPasswordReset: async (email) => {
+    try {
+      const data = await fetchWithAuth("/auth/forgot-password", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      });
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
 // Exporta a função fetchWithAuth para uso em outras partes da aplicação

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { authAPI } from "../../api/api";
+import { authAPI } from "../../api/api"; // Certifique-se de que o caminho está correto
 import "../login/login.css";
 import { Toast } from "primereact/toast";
 import "primereact/resources/themes/saga-blue/theme.css";
@@ -37,7 +37,6 @@ const Login = ({ setUser }) => {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
   const [nomeEndereco, setNomeEndereco] = useState("");
-  const [telefone, setTelefone] = useState("");
 
   const estados = [
     { label: "Acre", value: "AC" },
@@ -133,7 +132,6 @@ const Login = ({ setUser }) => {
         name,
         email,
         password,
-        telefone,
         tipoPessoa,
         cpfCnpj,
         endereco: {
@@ -202,9 +200,6 @@ const Login = ({ setUser }) => {
       }
       if (!estado) {
         errors.estado = "Estado é obrigatório";
-      }
-      if (!telefone) {
-        errors.telefone = "Telefone é obrigatório";
       }
     }
 
@@ -275,43 +270,40 @@ const Login = ({ setUser }) => {
             )}
           </div>
 
+          {isLogin && (
+            <div className="text-right mb-4">
+              <a
+                href="/forgot-password"
+                className="text-primary no-underline hover:underline"
+              >
+                Esqueceu sua senha?
+              </a>
+            </div>
+          )}
+
+          {!isLogin && (
+            <div className="field mb-4">
+              <span className="p-float-label">
+                <Password
+                  id="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  toggleMask
+                  className={formErrors.confirmPassword ? "p-invalid" : ""}
+                  feedback={false}
+                  hideIcon="pi pi-eye-slash"
+                  showIcon="pi pi-eye"
+                />
+                <label htmlFor="confirmPassword">Confirme sua senha</label>
+              </span>
+              {formErrors.confirmPassword && (
+                <small className="p-error">{formErrors.confirmPassword}</small>
+              )}
+            </div>
+          )}
+
           {!isLogin && (
             <>
-              <div className="field mb-4">
-                <span className="p-float-label">
-                  <InputText
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={formErrors.name ? "p-invalid" : ""}
-                  />
-                  <label htmlFor="name">Nome</label>
-                </span>
-                {formErrors.name && (
-                  <small className="p-error">{formErrors.name}</small>
-                )}
-              </div>
-
-              <div className="field mb-4">
-                <span className="p-float-label">
-                  <Password
-                    id="confirmPassword"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    toggleMask
-                    className={formErrors.confirmPassword ? "p-invalid" : ""}
-                    hideIcon="pi pi-eye"
-                    showIcon="pi pi-eye-slash"
-                  />
-                  <label htmlFor="confirmPassword">Confirme sua senha</label>
-                </span>
-                {formErrors.confirmPassword && (
-                  <small className="p-error">
-                    {formErrors.confirmPassword}
-                  </small>
-                )}
-              </div>
-
               <div className="field mb-4">
                 <div className="flex gap-4">
                   <div className="flex align-items-center">
@@ -471,22 +463,6 @@ const Login = ({ setUser }) => {
                     Nome do Endereço (Ex: Casa, Trabalho)
                   </label>
                 </span>
-              </div>
-
-              <div className="field mb-4">
-                <span className="p-float-label">
-                  <InputMask
-                    id="telefone"
-                    value={telefone}
-                    onChange={(e) => setTelefone(e.value)}
-                    mask="(99) 99999-9999"
-                    className={formErrors.telefone ? "p-invalid" : ""}
-                  />
-                  <label htmlFor="telefone">Telefone</label>
-                </span>
-                {formErrors.telefone && (
-                  <small className="p-error">{formErrors.telefone}</small>
-                )}
               </div>
 
               <div className="field-checkbox mb-4">

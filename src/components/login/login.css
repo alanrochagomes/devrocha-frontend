@@ -78,3 +78,27 @@
 .mt-6 {
   margin-top: 2.5rem;
 }
+
+.text-primary {
+  color: #2196f3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}

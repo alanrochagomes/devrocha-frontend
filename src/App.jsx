@@ -8,6 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Servicos from "./pages/servicos/Servicos";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Login from "./components/login/login";
+import ForgotPassword from "./components/login/ForgotPassword";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/servicos" element={<Servicos />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         </div>
         <Footer />
