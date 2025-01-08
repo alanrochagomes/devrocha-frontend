@@ -10,6 +10,8 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import Login from "./components/login/login";
 import ForgotPassword from "./components/login/ForgotPassword";
 import ResetPassword from "./components/login/ForgotPassword";
+import PrivacyPolicy from "./components/privacy/PrivacyPolicy";
+import About from "./components/about/About";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -27,6 +29,8 @@ const App = () => {
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer />

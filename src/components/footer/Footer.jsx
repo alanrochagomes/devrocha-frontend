@@ -36,21 +36,30 @@ const Footer = () => {
             <li>
               <Link to="/about">Quem Somos</Link>
             </li>
+
+            <li>
+              <Link to="/politica-privacidade">Política de Privacidade</Link>
+            </li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h3>Contato</h3>
           <ul>
-            <li>Email: nettcorpsolutions@mail.com</li>
-            <li>Telefone: (21) 9985-79960</li>
-            <li>Endereço: Rio de Janeiro, RJ</li>
+            <li>✉ nettcorpsolutions@mail.com </li>
+            <li>✉ atendimentonettcorpsolutions@mail.com</li>
+            <li>📞(21) 9985-79960</li>
+            <li>🏢 Endereço: Rio de Janeiro, RJ</li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 NettCorpSolutions. Todos os direitos reservados.</p>
+        <p>
+          © Copyright 2025 NettCorpSolutions – Inovação em Tecnologia, TI e
+          Soluções Digitais
+          {/*&copy; 2025 NettCorpSolutions. */}. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
   );

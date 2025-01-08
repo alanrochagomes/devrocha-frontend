@@ -18,7 +18,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !newPassword) {
+    if (!email || !newPassword || !confirmPassword) {
       toast.current.show({
         severity: "error",
         summary: "Erro",
@@ -38,6 +38,16 @@ const ForgotPassword = () => {
       return;
     }
 
+    if (newPassword.length < 6) {
+      toast.current.show({
+        severity: "error",
+        summary: "Erro",
+        detail: "A senha deve ter pelo menos 6 caracteres",
+        life: 3000,
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       await authAPI.requestPasswordReset(email, newPassword);
@@ -52,7 +62,7 @@ const ForgotPassword = () => {
       toast.current.show({
         severity: "error",
         summary: "Erro",
-        detail: "Não foi possível redefinir a senha",
+        detail: error.message || "Não foi possível redefinir a senha",
         life: 3000,
       });
     } finally {

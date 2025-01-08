@@ -15,6 +15,7 @@ import { Dropdown } from "primereact/dropdown";
 import { InputMask } from "primereact/inputmask";
 import { RadioButton } from "primereact/radiobutton";
 import { PrimeIcons } from "primereact/api";
+import backgroundImage from "../../assets/img/NettCorpSolutions - logo.png";
 
 const Login = ({ setUser }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -25,7 +26,7 @@ const Login = ({ setUser }) => {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [acceptImageUse, setAcceptImageUse] = useState(false);
   const navigate = useNavigate();
-  const toastTopCenter = useRef(null);
+  const toast = useRef(null);
   const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [tipoPessoa, setTipoPessoa] = useState("fisica");
@@ -38,6 +39,8 @@ const Login = ({ setUser }) => {
   const [estado, setEstado] = useState("");
   const [nomeEndereco, setNomeEndereco] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [autorizouArmazenamentoDeDados, setAutorizouArmazenamentoDeDados] =
+    useState(false);
 
   const estados = [
     { label: "Acre", value: "AC" },
@@ -96,11 +99,11 @@ const Login = ({ setUser }) => {
 
   const toggleForm = () => setIsLogin(!isLogin);
 
-  const showToast = (message) => {
-    toastTopCenter.current.show({
-      severity: "info",
-      summary: "Info",
-      detail: message,
+  const showToast = (config) => {
+    toast.current.show({
+      severity: config.severity || "info",
+      summary: config.summary || "Info",
+      detail: config.detail,
       life: 3000,
     });
   };
@@ -111,20 +114,33 @@ const Login = ({ setUser }) => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("user", JSON.stringify(data.user));
-      showToast("Login bem-sucedido!");
       setUser(data.user);
+      showToast({
+        severity: "success",
+        summary: "Sucesso",
+        detail: "Login realizado com sucesso!",
+      });
       setTimeout(() => {
         navigate("/");
         window.location.reload();
       }, 1000);
     } catch (error) {
-      showToast("Erro no login");
+      console.error("Erro no login:", error);
+      showToast({
+        severity: "error",
+        summary: "Erro",
+        detail: error.message || "Erro ao fazer login",
+      });
     }
   };
 
   const handleSignup = async () => {
     if (password !== confirmPassword) {
-      showToast("Senhas não coincidem");
+      showToast({
+        severity: "error",
+        summary: "Erro",
+        detail: "Senhas não coincidem",
+      });
       return;
     }
 
@@ -145,89 +161,108 @@ const Login = ({ setUser }) => {
           estado,
           nome: nomeEndereco,
         },
-        aceitouTermos: acceptTerms,
-        autorizouImagem: acceptImageUse,
+        aceitouTermos: acceptTerms === true,
+        autorizouArmazenamentoDeDados: autorizouArmazenamentoDeDados === true,
       });
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("user", JSON.stringify(data.user));
-      showToast("Cadastro realizado com sucesso!");
+
+      showToast({
+        severity: "success",
+        summary: "Sucesso",
+        detail:
+          "Cadastro realizado com sucesso! Bem-vindo à NettCorpSolutions!",
+      });
+
       setUser(data.user);
       setTimeout(() => {
         navigate("/");
         window.location.reload();
-      }, 1000);
+      }, 2000); // Aumentei para 2 segundos para dar tempo de ler a mensagem
     } catch (error) {
       console.error("Erro no cadastro:", error);
-      showToast(error.message || "Erro ao cadastrar");
+      showToast({
+        severity: "error",
+        summary: "Erro",
+        detail:
+          error.message || "Erro ao cadastrar. Por favor, tente novamente.",
+      });
     }
   };
 
   const validateForm = () => {
-    const errors = {};
-
-    if (!email) {
-      errors.email = "Email é obrigatório";
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "Email inválido";
-    }
-
-    if (!password) {
-      errors.password = "Senha é obrigatória";
-    } else if (password.length < 6) {
-      errors.password = "A senha deve ter no mínimo 6 caracteres";
-    }
-
     if (!isLogin) {
-      if (!name) {
-        errors.name = "Nome é obrigatório";
+      // Validações apenas para cadastro
+      if (
+        !name ||
+        !email ||
+        !password ||
+        !confirmPassword ||
+        !tipoPessoa ||
+        !cpfCnpj ||
+        !telefone
+      ) {
+        showToast({
+          severity: "error",
+          summary: "Erro",
+          detail: "Preencha todos os campos obrigatórios",
+        });
+        return false;
       }
+
+      // Validação dos checkboxes
+      if (!acceptTerms || !autorizouArmazenamentoDeDados) {
+        showToast({
+          severity: "error",
+          summary: "Erro",
+          detail:
+            "Você precisa aceitar os termos de uso e autorizar o armazenamento de dados",
+        });
+        return false;
+      }
+
       if (password !== confirmPassword) {
-        errors.confirmPassword = "As senhas não coincidem";
+        showToast({
+          severity: "error",
+          summary: "Erro",
+          detail: "As senhas não coincidem",
+        });
+        return false;
       }
-      if (!cpfCnpj) {
-        errors.cpfCnpj =
-          tipoPessoa === "fisica" ? "CPF é obrigatório" : "CNPJ é obrigatório";
+
+      if (password.length < 6) {
+        showToast({
+          severity: "error",
+          summary: "Erro",
+          detail: "A senha deve ter pelo menos 6 caracteres",
+        });
+        return false;
       }
-      if (!cep) {
-        errors.cep = "CEP é obrigatório";
-      }
-      if (!endereco) {
-        errors.endereco = "Endereço é obrigatório";
-      }
-      if (!numero) {
-        errors.numero = "Número é obrigatório";
-      }
-      if (!bairro) {
-        errors.bairro = "Bairro é obrigatório";
-      }
-      if (!cidade) {
-        errors.cidade = "Cidade é obrigatória";
-      }
-      if (!estado) {
-        errors.estado = "Estado é obrigatório";
-      }
-      if (!telefone) {
-        errors.telefone = "Telefone é obrigatório";
+    } else {
+      // Validações para login
+      if (!email || !password) {
+        showToast({
+          severity: "error",
+          summary: "Erro",
+          detail: "Preencha email e senha",
+        });
+        return false;
       }
     }
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
+    return true;
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+
+    if (!validateForm()) {
+      return;
+    }
 
     setLoading(true);
     try {
-      if (!isLogin && (!acceptTerms || !acceptImageUse)) {
-        showToast("Você deve aceitar os termos e a política de privacidade.");
-        return;
-      }
-
       if (isLogin) {
         await handleLogin();
       } else {
@@ -235,16 +270,31 @@ const Login = ({ setUser }) => {
       }
     } catch (error) {
       console.error(error);
+      showToast({
+        severity: "error",
+        summary: "Erro",
+        detail: error.message,
+      });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="login-container">
-      <Toast ref={toastTopCenter} position="top-center" />
+    <div
+      className="login-container"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Toast ref={toast} />
       <Card className="form-card">
-        <h2 className="text-center mb-4">{isLogin ? "Login" : "Cadastro"}</h2>
+        <div className="form-header">
+          <h2>{isLogin ? "Login" : "Registre-se aqui"}</h2>
+        </div>
         <form onSubmit={handleFormSubmit}>
           {!isLogin && (
             <div className="field mb-4">
@@ -514,20 +564,23 @@ const Login = ({ setUser }) => {
                   checked={acceptTerms}
                   onChange={(e) => setAcceptTerms(e.checked)}
                 />
+
                 <label htmlFor="terms">
-                  Eu aceito os <a href="/termos-de-uso">Termos de uso</a> e{" "}
-                  <a href="/politica-de-privacidade">Política de privacidade</a>
+                  Eu aceito os termos de uso da{" "}
+                  {/*<a href="/termos-de-uso">Termos de uso</a> e{" "} */}
+                  <a href="/politica-privacidade">Política de privacidade.</a>
                 </label>
               </div>
 
               <div className="field-checkbox mb-4">
                 <Checkbox
-                  inputId="imageAuthorization"
-                  checked={acceptImageUse}
-                  onChange={(e) => setAcceptImageUse(e.checked)}
+                  inputId="storageAuthorization"
+                  checked={autorizouArmazenamentoDeDados}
+                  onChange={(e) => setAutorizouArmazenamentoDeDados(e.checked)}
                 />
-                <label htmlFor="imageAuthorization">
-                  Autorizo a utilização da minha imagem
+                <label htmlFor="storageAuthorization">
+                  Autorizo que este site armazene minhas informações enviadas
+                  para que possam responder o meu contato.
                 </label>
               </div>
             </>

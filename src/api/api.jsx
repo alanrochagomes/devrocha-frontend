@@ -45,8 +45,8 @@ export const authAPI = {
           estado: userData.endereco.estado,
           nome: userData.endereco.nome,
         },
-        aceitouTermos: userData.acceptTerms,
-        autorizouImagem: userData.acceptImageUse,
+        aceitouTermos: userData.aceitouTermos,
+        autorizouArmazenamentoDeDados: userData.autorizouArmazenamentoDeDados,
       };
 
       const data = await fetchWithAuth("/auth/register", {
@@ -103,14 +103,18 @@ export const authAPI = {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, newPassword }),
+        body: JSON.stringify({
+          email: email,
+          newPassword: newPassword,
+        }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Falha ao redefinir senha");
+        throw new Error(data.message || "Falha ao redefinir senha");
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
       throw error;

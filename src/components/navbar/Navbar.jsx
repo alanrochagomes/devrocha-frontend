@@ -38,10 +38,9 @@ const Navbar = ({ user, setUser }) => {
 
   const handleSaveSettings = async (formData) => {
     try {
-      // Aqui você implementa a chamada API para atualizar os dados
+      // implementa a chamada API para atualizar os dados
       // const response = await api.put('/user/update', formData);
 
-      // Atualiza o localStorage com os novos dados
       const updatedUser = {
         ...JSON.parse(localStorage.getItem("user")),
         ...formData,
@@ -87,6 +86,12 @@ const Navbar = ({ user, setUser }) => {
               <Link to="/portfolio" onClick={toggleMobileMenu}>
                 Projetos
               </Link>
+              <Link to="/blog" onClick={toggleMobileMenu}>
+                Blog
+              </Link>
+              {/* <Link to="/blog" onClick={toggleMobileMenu}>
+                NettStudios
+              </Link> */}
               <Link to="/contato" onClick={toggleMobileMenu}>
                 Contato
               </Link>
