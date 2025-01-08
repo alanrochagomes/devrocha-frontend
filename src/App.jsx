@@ -9,6 +9,7 @@ import Servicos from "./pages/servicos/Servicos";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Login from "./components/login/login";
 import ForgotPassword from "./components/login/ForgotPassword";
+import ResetPassword from "./components/login/ForgotPassword";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Routes>
         </div>
         <Footer />
