@@ -12,6 +12,7 @@ import ForgotPassword from "./components/login/ForgotPassword";
 import ResetPassword from "./components/login/ForgotPassword";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import About from "./components/about/About";
+import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -34,6 +35,7 @@ const App = () => {
           </Routes>
         </div>
         <Footer />
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );
