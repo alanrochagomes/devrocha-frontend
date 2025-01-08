@@ -37,6 +37,7 @@ const Login = ({ setUser }) => {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
   const [nomeEndereco, setNomeEndereco] = useState("");
+  const [telefone, setTelefone] = useState("");
 
   const estados = [
     { label: "Acre", value: "AC" },
@@ -134,6 +135,7 @@ const Login = ({ setUser }) => {
         password,
         tipoPessoa,
         cpfCnpj,
+        telefone,
         endereco: {
           cep,
           logradouro: endereco,
@@ -143,17 +145,22 @@ const Login = ({ setUser }) => {
           estado,
           nome: nomeEndereco,
         },
-        acceptTerms,
-        acceptImageUse,
+        aceitouTermos: acceptTerms,
+        autorizouImagem: acceptImageUse,
       });
 
+      localStorage.setItem("token", data.token);
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("user", JSON.stringify(data.user));
-      showToast(data.message);
-      navigate("/");
-      window.location.reload();
+      showToast("Cadastro realizado com sucesso!");
+      setUser(data.user);
+      setTimeout(() => {
+        navigate("/");
+        window.location.reload();
+      }, 1000);
     } catch (error) {
-      showToast("Erro ao cadastrar");
+      console.error("Erro no cadastro:", error);
+      showToast(error.message || "Erro ao cadastrar");
     }
   };
 
@@ -201,6 +208,9 @@ const Login = ({ setUser }) => {
       if (!estado) {
         errors.estado = "Estado é obrigatório";
       }
+      if (!telefone) {
+        errors.telefone = "Telefone é obrigatório";
+      }
     }
 
     setFormErrors(errors);
@@ -236,6 +246,23 @@ const Login = ({ setUser }) => {
       <Card className="form-card">
         <h2 className="text-center mb-4">{isLogin ? "Login" : "Cadastro"}</h2>
         <form onSubmit={handleFormSubmit}>
+          {!isLogin && (
+            <div className="field mb-4">
+              <span className="p-float-label">
+                <InputText
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className={formErrors.name ? "p-invalid" : ""}
+                />
+                <label htmlFor="name">Nome completo</label>
+              </span>
+              {formErrors.name && (
+                <small className="p-error">{formErrors.name}</small>
+              )}
+            </div>
+          )}
+
           <div className="field mb-4">
             <span className="p-float-label">
               <InputText
@@ -371,6 +398,22 @@ const Login = ({ setUser }) => {
                 </span>
                 {formErrors.cep && (
                   <small className="p-error">{formErrors.cep}</small>
+                )}
+              </div>
+
+              <div className="field mb-4">
+                <span className="p-float-label">
+                  <InputMask
+                    id="telefone"
+                    value={telefone}
+                    onChange={(e) => setTelefone(e.value)}
+                    mask="(99) 99999-9999"
+                    className={formErrors.telefone ? "p-invalid" : ""}
+                  />
+                  <label htmlFor="telefone">Telefone</label>
+                </span>
+                {formErrors.telefone && (
+                  <small className="p-error">{formErrors.telefone}</small>
                 )}
               </div>
 
