@@ -190,3 +190,83 @@
     margin-right: 2rem;
   }
 }
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0066cc;
+}
+
+.nav-links li a:hover {
+  color: #0066cc;
+}
+
+.nav-links .active {
+  color: #0066cc;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #0066cc !important;
+}
+
+.nav-links a:hover {
+  color: #0066cc !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0066cc !important;
+}
+
+.active {
+  color: #0066cc !important;
+}
+
+.area-cliente-btn {
+  background-color: #0066cc;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border: 2px solid #0066cc;
+}
+
+.area-cliente-btn:hover {
+  background-color: transparent;
+  color: #0066cc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #0066cc !important;
+}
+
+.nav-links a:hover {
+  color: #0066cc !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0066cc !important;
+}
+
+.active {
+  color: #0066cc !important;
+}

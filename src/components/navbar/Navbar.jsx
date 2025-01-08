@@ -86,6 +86,7 @@ const Navbar = ({ user, setUser }) => {
               <Link to="/portfolio" onClick={toggleMobileMenu}>
                 Projetos
               </Link>
+
               <Link to="/blog" onClick={toggleMobileMenu}>
                 Blog
               </Link>
@@ -125,6 +126,7 @@ const Navbar = ({ user, setUser }) => {
             <Link to="/">Home</Link>
             <Link to="/servicos">Serviços</Link>
             <Link to="/portfolio">Projetos</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/contato">Contato</Link>
           </div>
           <div className="navbar-auth">
@@ -182,7 +184,7 @@ const Navbar = ({ user, setUser }) => {
             ) : (
               <Link
                 to="/login"
-                className="area-cliente-button"
+                className="area-cliente-btn"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Área do Cliente
