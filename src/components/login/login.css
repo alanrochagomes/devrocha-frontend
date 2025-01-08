@@ -3,133 +3,79 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 2rem;
   background-color: #f5f5f5;
-  padding: 20px;
 }
 
-.login-box {
-  background: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.form-card {
   width: 100%;
-  max-width: 400px;
-  text-align: center;
+  max-width: 450px;
+  padding: 2rem;
 }
 
-.login-logo {
-  width: 200px;
-  margin-bottom: 30px;
+.field {
+  margin-bottom: 1.5rem;
 }
 
-.login-box h1 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.login-box p {
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-}
-
-.form-group input:focus {
-  border-color: #0066ff;
-}
-
-/* Estilo específico para o botão de acessar */
-.access-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0066ff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.field-checkbox {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 48px;
+  gap: 0.5rem;
 }
 
-.access-button:hover {
-  background-color: #0052cc;
+.p-password {
+  width: 100%;
 }
 
-.access-button:active {
-  transform: translateY(1px);
+.p-inputtext {
+  width: 100%;
 }
 
-/* Remove os estilos antigos do login-button que não são mais necessários */
-.login-button {
-  display: none;
-}
-
-.forgot-password {
-  margin-top: 20px;
-}
-
-.forgot-password a {
-  color: #0066ff;
+.switch-form {
+  color: var(--primary-color);
   text-decoration: none;
-  font-size: 14px;
-}
-
-.forgot-password a:hover {
-  text-decoration: underline;
-}
-
-/* Responsivo */
-@media (max-width: 480px) {
-  .login-box {
-    padding: 20px;
-  }
-
-  .login-logo {
-    width: 150px;
-  }
-}
-
-.form-footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.register-option,
-.login-option {
-  margin-top: 15px;
-  color: #666;
-}
-
-.switch-form-button {
-  background: none;
-  border: none;
-  color: #0066ff;
   cursor: pointer;
-  font-size: inherit;
-  padding: 0;
-  margin-left: 5px;
+}
+
+.switch-form:hover {
   text-decoration: underline;
 }
 
-.switch-form-button:hover {
-  color: #0052cc;
+.flex {
+  display: flex;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Ajuste para campos de endereço em telas menores */
+@media screen and (max-width: 576px) {
+  .form-card {
+    padding: 1rem;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mt-6 {
+  margin-top: 2.5rem;
 }

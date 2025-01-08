@@ -30,12 +30,32 @@ const fetchWithAuth = async (endpoint, options = {}) => {
 
 // API de autenticação
 export const authAPI = {
-  // Registro de usuário
+  // Registro de usuário com dados completos
   register: async (userData) => {
     try {
+      // Estruturando os dados para envio
+      const formattedData = {
+        name: userData.name,
+        email: userData.email,
+        password: userData.password,
+        tipoPessoa: userData.tipoPessoa,
+        cpfCnpj: userData.cpfCnpj,
+        endereco: {
+          cep: userData.endereco.cep,
+          logradouro: userData.endereco.logradouro,
+          numero: userData.endereco.numero,
+          bairro: userData.endereco.bairro,
+          cidade: userData.endereco.cidade,
+          estado: userData.endereco.estado,
+          nome: userData.endereco.nome, // nome do endereço (ex: casa, trabalho)
+        },
+        aceitouTermos: userData.acceptTerms,
+        autorizouImagem: userData.acceptImageUse,
+      };
+
       const data = await fetchWithAuth("/auth/register", {
         method: "POST",
-        body: JSON.stringify(userData),
+        body: JSON.stringify(formattedData),
       });
 
       if (data.token) {
