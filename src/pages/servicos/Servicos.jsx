@@ -243,6 +243,16 @@ const Servicos = () => {
 
   const faqQuestions = [
     {
+      question: "Usuários cadastrados têm prioridade?",
+      answer:
+        "Sim, usuários cadastrados têm prioridade no atendimento. No entanto, usuários não cadastrados também serão atendidos da mesma forma. Não é necessário se cadastrar para solicitar serviços, mas é recomendado para aproveitar vantagens como exclusividade e relatórios de progresso.",
+    },
+    {
+      question: "Assinantes de plano são cadastrados automaticamente?",
+      answer:
+        "Sim, assinantes de plano são cadastrados automaticamente, garantindo acesso imediato a todos os benefícios e priorização no atendimento. A senha de acesso será enviada por email e, após recebê-la, é recomendado que você edite a senha para garantir a segurança da sua conta.",
+    },
+    {
       question: "Meu site aparecerá no Google?",
       answer:
         "Sim, está incluso em nosso trabalho de desenvolvimento de sites cadastrar seu site no Google e otimizar ele de acordo com as boas práticas de SEO.",

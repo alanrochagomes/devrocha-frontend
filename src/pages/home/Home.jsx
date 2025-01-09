@@ -566,10 +566,36 @@ const Home = () => {
           </div>
           <div className="discord-communication-visual" data-aos="fade-left">
             <img
-              src="https://cdn.dribbble.com/users/1708816/screenshots/15637256/media/f9826f0af8a49462f048262a8502035b.gif"
+              src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif"
               alt="Discord Communication Animation"
               className="discord-communication-animation"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="faq-section" data-aos="fade-up">
+        <div className="faq-content">
+          <h2>Perguntas Frequentes</h2>
+          <div className="faq-item">
+            <h4>Usuários cadastrados têm prioridade?</h4>
+            <p>
+              Sim, usuários cadastrados têm prioridade no atendimento. No
+              entanto, usuários não cadastrados também serão atendidos da mesma
+              forma. Não é necessário se cadastrar para solicitar serviços, mas
+              é recomendado para aproveitar vantagens como exclusividade e
+              relatórios de progresso.
+            </p>
+          </div>
+          <div className="faq-item">
+            <h4>Assinantes de plano são cadastrados automaticamente?</h4>
+            <p>
+              Sim, assinantes de plano são cadastrados automaticamente,
+              garantindo acesso imediato a todos os benefícios e priorização no
+              atendimento. A senha de acesso será enviada por email e, após
+              recebê-la, é recomendado que você edite a senha para garantir a
+              segurança da sua conta.
+            </p>
           </div>
         </div>
       </section>
