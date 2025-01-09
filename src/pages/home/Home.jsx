@@ -39,7 +39,7 @@ const Home = () => {
 
   const beneficios = [
     {
-      icon: "���",
+      icon: "💻",
       titulo: "Desenvolvimento Web",
       descricao: "Sites e sistemas modernos e personalizados",
     },
@@ -191,6 +191,124 @@ const Home = () => {
           </div>
         </div>
       </section> */}
+
+      <section className="dev-web-section" data-aos="fade-up">
+        <div className="dev-web-content">
+          <div className="dev-web-text" data-aos="fade-right">
+            <h2>Desenvolvimento Web Moderno</h2>
+            <div className="dev-features">
+              <div className="feature-item">
+                <div className="feature-icon">⚡</div>
+                <div className="feature-text">
+                  <h4>Performance Otimizada</h4>
+                  <p>
+                    Sites rápidos e responsivos para melhor experiência do
+                    usuário
+                  </p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">🎯</div>
+                <div className="feature-text">
+                  <h4>SEO Friendly</h4>
+                  <p>Estrutura otimizada para mecanismos de busca</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">📱</div>
+                <div className="feature-text">
+                  <h4>Design Responsivo</h4>
+                  <p>Adaptação perfeita para todos os dispositivos</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="code-stats">
+              <div className="stat-item">
+                <span className="stat-number">100%</span>
+                <span className="stat-label">Código Limpo</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">99%</span>
+                <span className="stat-label">Performance</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">24/7</span>
+                <span className="stat-label">Suporte</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="dev-web-visual" data-aos="fade-left">
+            <img
+              src="https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/programmer.gif"
+              alt="Coding Animation"
+              className="coding-animation"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="design-section" data-aos="fade-up">
+        <div className="design-content">
+          <div className="design-visual" data-aos="fade-right">
+            <img
+              src="https://cdn.dribbble.com/users/1059583/screenshots/4171367/coding-freak.gif"
+              alt="Design Process Animation"
+              className="design-animation"
+            />
+          </div>
+
+          <div className="design-text" data-aos="fade-left">
+            <h2>Design UI/UX Inovador</h2>
+            <div className="design-features">
+              <div className="feature-item">
+                <div className="feature-icon">🎨</div>
+                <div className="feature-text">
+                  <h4>Design Intuitivo</h4>
+                  <p>
+                    Interfaces claras e fáceis de usar que encantam seus
+                    usuários
+                  </p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">📱</div>
+                <div className="feature-text">
+                  <h4>Design Responsivo</h4>
+                  <p>Experiências perfeitas em todos os dispositivos</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">🔍</div>
+                <div className="feature-text">
+                  <h4>Pesquisa UX</h4>
+                  <p>Decisões baseadas em dados e feedback dos usuários</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="design-stats">
+              <div className="stat-item">
+                <span className="stat-number">98%</span>
+                <span className="stat-label">Satisfação</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">50+</span>
+                <span className="stat-label">Projetos</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">UX</span>
+                <span className="stat-label">Certificados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="tecnologias-section" data-aos="fade-up">
         <h2>Tecnologias que utilizamos</h2>
