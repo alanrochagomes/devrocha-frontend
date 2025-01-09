@@ -464,6 +464,115 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Nova Seção de Vantagens do Usuário */}
+      <section className="user-benefits-section" data-aos="fade-up">
+        <div className="user-benefits-content">
+          <div className="user-benefits-text" data-aos="fade-right">
+            <h2>Vantagens de Ser um Usuário Cadastrado</h2>
+            <div className="benefits-features">
+              <div className="feature-item">
+                <div className="feature-icon">🔑</div>
+                <div className="feature-text">
+                  <h4>Acesso Exclusivo</h4>
+                  <p>
+                    Usuários cadastrados têm acesso a solicitações exclusivas e
+                    acompanhamento de progresso.
+                  </p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">🚀</div>
+                <div className="feature-text">
+                  <h4>Prioridade Alta</h4>
+                  <p>
+                    Solicitações de usuários cadastrados são tratadas com
+                    prioridade mais alta.
+                  </p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">👥</div>
+                <div className="feature-text">
+                  <h4>Comunidade</h4>
+                  <p>
+                    Faça parte de uma comunidade de usuários com benefícios
+                    exclusivos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="user-benefits-visual" data-aos="fade-left">
+            <img
+              src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif"
+              alt="User Benefits Animation"
+              className="user-benefits-animation"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Relatórios Semanais */}
+      <section className="weekly-reports-section" data-aos="fade-up">
+        <div className="weekly-reports-content">
+          <div className="weekly-reports-text" data-aos="fade-right">
+            <h2>Relatórios Semanais</h2>
+            <p>
+              Receba relatórios semanais detalhados sobre o progresso das suas
+              tarefas. Mantenha-se informado sobre cada etapa do seu projeto.
+            </p>
+            <ul>
+              <li>
+                📄 PDF: Relatórios detalhados enviados diretamente para você.
+              </li>
+              <li>
+                📧 Email: Receba atualizações diretamente na sua caixa de
+                entrada.
+              </li>
+              <li>
+                💬 Discord: Participe de discussões e receba relatórios na nossa
+                comunidade.
+              </li>
+              <li>
+                📱 WhatsApp: Receba notificações rápidas e relatórios no seu
+                celular.
+              </li>
+            </ul>
+          </div>
+          <div className="weekly-reports-visual" data-aos="fade-left">
+            <img
+              src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif"
+              alt="Weekly Reports Animation"
+              className="weekly-reports-animation"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Comunicação no Discord */}
+      <section className="discord-communication-section" data-aos="fade-up">
+        <div className="discord-communication-content">
+          <div className="discord-communication-text" data-aos="fade-right">
+            <h2>Comunicação na Comunidade do Discord</h2>
+            <p>
+              Junte-se à nossa comunidade no Discord para acompanhar suas
+              tarefas, participar de chamadas ao vivo e interagir com outros
+              usuários.
+            </p>
+          </div>
+          <div className="discord-communication-visual" data-aos="fade-left">
+            <img
+              src="https://cdn.dribbble.com/users/1708816/screenshots/15637256/media/f9826f0af8a49462f048262a8502035b.gif"
+              alt="Discord Communication Animation"
+              className="discord-communication-animation"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

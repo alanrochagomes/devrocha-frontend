@@ -1050,3 +1050,90 @@
     padding: 4rem 1rem;
   }
 }
+
+.user-benefits-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.user-benefits-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-benefits-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.user-benefits-visual {
+  flex: 1;
+  text-align: center;
+}
+
+.user-benefits-animation {
+  max-width: 100%;
+  height: auto;
+}
+
+.benefits-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.feature-text h4 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.feature-text p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+.weekly-reports-section,
+.discord-communication-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.weekly-reports-content,
+.discord-communication-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.weekly-reports-text,
+.discord-communication-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.weekly-reports-visual,
+.discord-communication-visual {
+  flex: 1;
+  text-align: center;
+}
+
+.weekly-reports-animation,
+.discord-communication-animation {
+  max-width: 100%;
+  height: auto;
+}

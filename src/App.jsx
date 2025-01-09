@@ -16,6 +16,7 @@ import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import Blog from "./pages/blog/blog";
 import BlogPost from "./pages/blog/blogPost";
 import FaleConosco from "./pages/faleConosco/FaleConosco";
+import ProgressRequestForm from "./components/ProgressRequestForm/ProgressRequestForm";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/fale-conosco" element={<FaleConosco />} />
+            <Route path="/andamento" element={<ProgressRequestForm />} />
           </Routes>
         </div>
         <Footer />
