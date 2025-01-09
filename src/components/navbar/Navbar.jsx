@@ -148,12 +148,13 @@ const Navbar = ({ user, setUser }) => {
                     />
                   </button>
                   {isDropdownOpen && (
-                    <ul className="dropdown-menu dropdown-menu-dark show">
+                    <ul className="dropdown-menu show">
                       <li>
                         <button
                           className="dropdown-item"
                           onClick={handleOpenSettings}
                         >
+                          <i className="fas fa-cog"></i>
                           Configurações
                         </button>
                       </li>
@@ -163,6 +164,7 @@ const Navbar = ({ user, setUser }) => {
                           className="dropdown-item"
                           onClick={closeDropdown}
                         >
+                          <i className="fas fa-tasks"></i>
                           Andamento
                         </Link>
                       </li>
@@ -174,6 +176,7 @@ const Navbar = ({ user, setUser }) => {
                             handleLogout();
                           }}
                         >
+                          <i className="fas fa-sign-out-alt"></i>
                           Sair
                         </button>
                       </li>
