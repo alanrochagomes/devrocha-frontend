@@ -4,6 +4,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
 import banner from "../../assets/img/NettCorpSolutions - logo.png";
+import reactLogo from "../../pages/home/img/react.png";
+import nodejsLogo from "../../pages/home/img/nodejs.png";
+import typescriptLogo from "../../pages/home/img/typescript.svg";
+import awsLogo from "../../pages/home/img/aws.svg";
+import dockerLogo from "../../pages/home/img/docker.svg";
+import mongodbLogo from "../../pages/home/img/mongodb.png";
 
 const WhatsAppButton = () => {
   const message =
@@ -55,12 +61,12 @@ const Home = () => {
   ];
 
   const tecnologias = [
-    { nome: "React", imagem: "/images/tech/react.png" },
-    { nome: "Node.js", imagem: "/images/tech/nodejs.png" },
-    { nome: "Python", imagem: "/images/tech/python.png" },
-    { nome: "AWS", imagem: "/images/tech/aws.png" },
-    { nome: "Docker", imagem: "/images/tech/docker.png" },
-    { nome: "MongoDB", imagem: "/images/tech/mongodb.png" },
+    { nome: "React", imagem: reactLogo },
+    { nome: "Node.js", imagem: nodejsLogo },
+    { nome: "TypeScript", imagem: typescriptLogo },
+    { nome: "MongoDB", imagem: mongodbLogo },
+    { nome: "Docker", imagem: dockerLogo },
+    { nome: "AWS", imagem: awsLogo },
   ];
 
   return (
@@ -135,7 +141,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="resultados-section" data-aos="fade-up">
+      {/* TODO: <section className="resultados-section" data-aos="fade-up">
         <div className="resultados-content">
           <h2>Nossos Resultados</h2>
           <div className="resultados-grid">
@@ -184,7 +190,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="tecnologias-section" data-aos="fade-up">
         <h2>Tecnologias que utilizamos</h2>

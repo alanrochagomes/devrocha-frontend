@@ -13,6 +13,9 @@ import ResetPassword from "./components/login/ForgotPassword";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import About from "./pages/about/About";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
+import Blog from "./pages/blog/blog";
+import BlogPost from "./pages/blog/blogPost";
+import FaleConosco from "./pages/faleConosco/FaleConosco";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -32,6 +35,9 @@ const App = () => {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/fale-conosco" element={<FaleConosco />} />
           </Routes>
         </div>
         <Footer />

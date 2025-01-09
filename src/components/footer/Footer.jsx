@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>Links Rápidos</h3>
+          <h3>Institucional</h3>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -46,7 +46,15 @@ const Footer = () => {
             </li>
 
             <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+
+            <li>
               <Link to="/contato">Contato</Link>
+            </li>
+
+            <li>
+              <Link to="/fale-conosco">Fale Conosco</Link>
             </li>
 
             <li>
@@ -64,6 +72,7 @@ const Footer = () => {
           <ul>
             <li>✉ nettcorpsolutions@mail.com </li>
             <li>✉ atendimentonettcorpsolutions@mail.com</li>
+            {/* <li>✉ suportenettcorpsolutions@mail.com</li> */}
             <li>📞(21) 9985-79960</li>
             <li>🏢 Endereço: Rio de Janeiro, RJ</li>
           </ul>
