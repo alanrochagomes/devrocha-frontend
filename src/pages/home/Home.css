@@ -955,3 +955,98 @@
     text-align: center;
   }
 }
+
+/* Estilos comuns para todas as seções */
+.maintenance-section,
+.planning-section,
+.update-section {
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+
+.maintenance-content,
+.planning-content,
+.update-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Animações */
+.maintenance-animation,
+.planning-animation,
+.update-animation {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos com gradientes diferentes */
+.maintenance-text h2 {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.planning-text h2 {
+  background: linear-gradient(135deg, #f2994a, #f2c94c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.update-text h2 {
+  background: linear-gradient(135deg, #6e48aa, #9d50bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botão CTA */
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #007bff, #00d2ff);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+  .maintenance-content,
+  .planning-content,
+  .update-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .maintenance-visual,
+  .planning-visual,
+  .update-visual {
+    order: 2;
+  }
+
+  .maintenance-text,
+  .planning-text,
+  .update-text {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .maintenance-section,
+  .planning-section,
+  .update-section {
+    padding: 4rem 1rem;
+  }
+}

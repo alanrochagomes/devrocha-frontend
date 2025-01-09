@@ -340,6 +340,130 @@ const Home = () => {
         </div>
       </section>
       <WhatsAppButton />
+
+      {/* Seção de Manutenção */}
+      <section className="maintenance-section" data-aos="fade-up">
+        <div className="maintenance-content">
+          <div className="maintenance-text" data-aos="fade-right">
+            <h2>Manutenção e Suporte</h2>
+            <div className="maintenance-features">
+              <div className="feature-item">
+                <div className="feature-icon">🔧</div>
+                <div className="feature-text">
+                  <h4>Suporte Contínuo</h4>
+                  <p>Atendimento 24/7 para manter seu sistema funcionando</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">🔄</div>
+                <div className="feature-text">
+                  <h4>Atualizações Regulares</h4>
+                  <p>Mantenha seu sistema sempre atualizado e seguro</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">📊</div>
+                <div className="feature-text">
+                  <h4>Monitoramento</h4>
+                  <p>Acompanhamento constante do desempenho</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="maintenance-visual" data-aos="fade-left">
+            <img
+              src="https://cdn.dribbble.com/users/1708816/screenshots/15637256/media/f9826f0af8a49462f048262a8502035b.gif"
+              alt="Maintenance Animation"
+              className="maintenance-animation"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Planejamento de Projetos */}
+      <section className="planning-section" data-aos="fade-up">
+        <div className="planning-content">
+          <div className="planning-visual" data-aos="fade-right">
+            <img
+              src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Developer.gif"
+              alt="Planning Animation"
+              className="planning-animation"
+            />
+          </div>
+
+          <div className="planning-text" data-aos="fade-left">
+            <h2>Planeje Seu Projeto</h2>
+            <div className="planning-features">
+              <div className="feature-item">
+                <div className="feature-icon">💡</div>
+                <div className="feature-text">
+                  <h4>Reunião Inicial</h4>
+                  <p>Converse conosco sobre sua ideia em uma reunião online</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">📋</div>
+                <div className="feature-text">
+                  <h4>Análise Detalhada</h4>
+                  <p>Avaliamos requisitos e planejamos a melhor solução</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">🎯</div>
+                <div className="feature-text">
+                  <h4>Proposta Personalizada</h4>
+                  <p>Receba um plano detalhado e orçamento adequado</p>
+                </div>
+              </div>
+            </div>
+            <Link to="/contato" className="cta-button">
+              Agende uma Reunião
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Atualização de Cadastro */}
+      <section className="update-section" data-aos="fade-up">
+        <div className="update-content">
+          <div className="update-text" data-aos="fade-right">
+            <h2>Atualize Seus Dados</h2>
+            <div className="update-features">
+              <div className="feature-item">
+                <div className="feature-icon">👤</div>
+                <div className="feature-text">
+                  <h4>Dados Pessoais</h4>
+                  <p>Mantenha seu nome e informações sempre atualizados</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">📧</div>
+                <div className="feature-text">
+                  <h4>Contatos</h4>
+                  <p>Atualize seu email e telefone quando necessário</p>
+                </div>
+              </div>
+            </div>
+            <Link to="/fale-conosco" className="cta-button">
+              Atualizar Cadastro
+            </Link>
+          </div>
+
+          <div className="update-visual" data-aos="fade-left">
+            <img
+              src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Designer.gif"
+              alt="Update Profile Animation"
+              className="update-animation"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

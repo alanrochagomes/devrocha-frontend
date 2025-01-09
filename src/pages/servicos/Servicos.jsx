@@ -2,27 +2,133 @@ import React, { useState } from "react";
 import "./Servicos.css";
 
 const Servicos = () => {
+  const [planoTipo, setPlanoTipo] = useState("mensal");
   const [categoriaAtiva, setCategoriaAtiva] = useState("todos");
   const [activeQuestion, setActiveQuestion] = useState(null);
 
+  const scrollToSolicitacao = () => {
+    document.querySelector(".solicitar-site").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const planos = [
+    {
+      titulo: "Básico",
+      preco: planoTipo === "mensal" ? "R$299,90" : "R$2.999,00",
+      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      features: [
+        "Site Responsivo",
+        "2 páginas",
+        "Domínio Grátis",
+        "SSL Gratuito",
+        "Suporte 8x5",
+      ],
+      destaque: false,
+    },
+    {
+      titulo: "Standard",
+      preco: planoTipo === "mensal" ? "R$499,90" : "R$4.999,00",
+      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      features: [
+        "Site Responsivo",
+        "5 páginas",
+        "Domínio Grátis",
+        "SSL Gratuito",
+        "Suporte 12x6",
+        "Painel Administrativo",
+        "Blog Integrado",
+      ],
+      destaque: true,
+    },
+    {
+      titulo: "Premium",
+      preco: planoTipo === "mensal" ? "R$999,90" : "R$9.999,00",
+      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      features: [
+        "Site Responsivo",
+        "Páginas Ilimitadas",
+        "Domínio Grátis",
+        "SSL Gratuito",
+        "Suporte 24x7",
+        "Painel Administrativo",
+        "Blog Integrado",
+        "E-commerce",
+        "API Personalizada",
+      ],
+      destaque: false,
+    },
+  ];
+
   const servicos = [
     {
-      titulo: "Criação de Sites",
+      titulo: "Desenvolvimento Web",
       preco: "A partir de R$ 2.500",
       descricao: "Sites profissionais e responsivos",
+      icon: "💻",
+      features: ["Design Responsivo", "SEO Otimizado", "Painel Administrativo"],
       categorias: ["todos", "criacao"],
+    },
+    {
+      titulo: "E-commerce",
+      preco: "A partir de R$ 4.500",
+      descricao: "Sua loja virtual completa",
+      icon: "🛍️",
+      features: [
+        "Pagamentos Online",
+        "Gestão de Estoque",
+        "Múltiplos Vendedores",
+      ],
+      categorias: ["todos", "criacao"],
+    },
+    {
+      titulo: "Aplicações Web",
+      preco: "A partir de R$ 8.000",
+      descricao: "Sistemas web personalizados",
+      icon: "⚙️",
+      features: ["Dashboard Personalizado", "APIs RESTful", "Integrações"],
+      categorias: ["todos", "criacao"],
+    },
+    {
+      titulo: "UI/UX Design",
+      preco: "A partir de R$ 2.000",
+      descricao: "Design moderno e intuitivo",
+      icon: "🎨",
+      features: ["Protótipos", "Design System", "Testes de Usabilidade"],
+      categorias: ["todos", "design"],
     },
     {
       titulo: "Manutenção Mensal",
       preco: "A partir de R$ 200/mês",
       descricao: "Suporte e atualizações contínuas",
+      icon: "🔧",
+      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
       categorias: ["todos", "manutencao"],
     },
     {
-      titulo: "Otimização SEO",
-      preco: "A partir de R$ 800",
-      descricao: "Melhore seu ranking no Google",
+      titulo: "Marketing Digital",
+      preco: "A partir de R$ 800/mês",
+      descricao: "Estratégias para crescimento",
+      icon: "📈",
+      features: ["SEO", "Google Ads", "Analytics"],
       categorias: ["todos", "marketing"],
+    },
+    {
+      titulo: "Landing Pages",
+      preco: "A partir de R$ 1.500",
+      descricao: "Páginas de alta conversão",
+      icon: "🎯",
+      features: ["A/B Testing", "Otimização de Conversão", "Analytics"],
+      categorias: ["todos", "criacao"],
+    },
+    {
+      titulo: "Hospedagem Cloud",
+      preco: "A partir de R$ 100/mês",
+      descricao: "Infraestrutura escalável",
+      icon: "☁️",
+      features: ["SSL Gratuito", "CDN Global", "Backup Automático"],
+      categorias: ["todos", "infraestrutura"],
     },
   ];
 
@@ -146,17 +252,35 @@ const Servicos = () => {
         <div className="servicos-grid">
           {servicos.map((servico, index) => (
             <div key={index} className="servico-card">
+              <div className="servico-icon">{servico.icon}</div>
               <h3>{servico.titulo}</h3>
               <p className="servico-preco">{servico.preco}</p>
               <p className="servico-descricao">{servico.descricao}</p>
-              <button className="servico-btn">Saiba Mais</button>
+              <ul className="servico-features">
+                {servico.features.map((feature, i) => (
+                  <li key={i}>✓ {feature}</li>
+                ))}
+              </ul>
+              <button className="servico-btn" onClick={scrollToSolicitacao}>
+                Saiba Mais
+              </button>
             </div>
           ))}
         </div>
       </section>
 
+      <section className="animation-section">
+        <div className="animation-container">
+          <img
+            src="https://cdn.dribbble.com/users/1059583/screenshots/4171367/coding-freak.gif"
+            alt="Serviços Web Animation"
+            className="service-animation"
+          />
+        </div>
+      </section>
+
       <section className="portfolio-section">
-        <h2>Portfólio por Segmento</h2>
+        {/* <h2>Portfólio por Segmento</h2> */}
         {/* TODO: <div className="categorias-filtro">
           <button
             className={categoriaAtiva === "todos" ? "ativo" : ""}
@@ -193,6 +317,63 @@ const Servicos = () => {
         </div> */}
       </section>
 
+      <section className="planos-section">
+        <div className="planos-header">
+          <h2>Escolha o Melhor Plano para Você</h2>
+          <div className="planos-toggle">
+            <button
+              className={planoTipo === "mensal" ? "active" : ""}
+              onClick={() => setPlanoTipo("mensal")}
+            >
+              MENSAL
+            </button>
+            <button
+              className={planoTipo === "anual" ? "active" : ""}
+              onClick={() => setPlanoTipo("anual")}
+            >
+              ANUAL
+              <span className="economia">ECONOMIZE ATÉ 36%</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="planos-grid">
+          {planos.map((plano, index) => (
+            <div
+              key={index}
+              className={`plano-card ${plano.destaque ? "destaque" : ""}`}
+            >
+              <h3>{plano.titulo}</h3>
+              <div className="plano-preco">
+                <span className="preco">{plano.preco}</span>
+                <span className="periodo">{plano.periodo}</span>
+              </div>
+              <ul className="plano-features">
+                {plano.features.map((feature, i) => (
+                  <li key={i}>
+                    <i className="fas fa-check"></i>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="plano-btn" onClick={scrollToSolicitacao}>
+                Escolher Plano
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="animation-section">
+        <div className="animation-container">
+          <img
+            src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Designer.gif"
+            alt="Site Request Animation"
+            className="request-animation"
+          />
+        </div>
+      </section>
+
       <section className="solicitar-site">
         <h2>SOLICITAR CRIAÇÃO DE SITE</h2>
         <form className="solicitar-form">
@@ -212,23 +393,73 @@ const Servicos = () => {
 
           <div className="form-group">
             <label>
-              Qual tipo de site você deseja? <span className="required">*</span>
+              E-mail <span className="required">*</span>
+            </label>
+            <input type="email" required placeholder="seu@email.com" />
+          </div>
+
+          <div className="form-group">
+            <label>
+              Qual plano você tem interesse? <span className="required">*</span>
             </label>
             <select required>
               <option value="">- Selecione Uma Opção -</option>
-              <option value="institucional">Site Institucional</option>
-              <option value="ecommerce">E-commerce</option>
-              <option value="landing">Landing Page</option>
-              <option value="blog">Blog</option>
-              <option value="portal">Portal</option>
+              <option value="basico">Plano Básico</option>
+              <option value="standard">Plano Standard</option>
+              <option value="premium">Plano Premium</option>
             </select>
           </div>
 
           <div className="form-group">
             <label>
-              E-mail <span className="required">*</span>
+              Qual tipo de serviço você deseja?{" "}
+              <span className="required">*</span>
             </label>
-            <input type="email" required placeholder="seu@email.com" />
+            <select required>
+              <option value="">- Selecione Uma Opção -</option>
+              <option value="desenvolvimento-web">Desenvolvimento Web</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="aplicacoes-web">Aplicações Web</option>
+              <option value="ui-ux">UI/UX Design</option>
+              <option value="manutencao">Manutenção Mensal</option>
+              <option value="marketing">Marketing Digital</option>
+              <option value="landing-pages">Landing Pages</option>
+              <option value="hospedagem">Hospedagem Cloud</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>
+              Tipo de Pagamento Preferido <span className="required">*</span>
+            </label>
+            <select required>
+              <option value="">- Selecione Uma Opção -</option>
+              <option value="mensal">Mensal</option>
+              <option value="anual">Anual (Economia de até 36%)</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>
+              Prazo Desejado <span className="required">*</span>
+            </label>
+            <select required>
+              <option value="">- Selecione Uma Opção -</option>
+              <option value="urgente">Urgente (até 15 dias)</option>
+              <option value="normal">Normal (30 a 45 dias)</option>
+              <option value="flexivel">Flexível (45+ dias)</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Orçamento Aproximado</label>
+            <select>
+              <option value="">- Selecione Uma Opção -</option>
+              <option value="ate-3000">Até R$ 3.000</option>
+              <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
+              <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
+              <option value="acima-10000">Acima de R$ 10.000</option>
+            </select>
           </div>
 
           <div className="form-group">
@@ -238,7 +469,7 @@ const Servicos = () => {
             <textarea
               required
               rows="5"
-              placeholder="Descreva seu projeto"
+              placeholder="Descreva seu projeto, funcionalidades desejadas e outros detalhes importantes"
             ></textarea>
           </div>
 
