@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPostData, getLatestPosts } from "./service/blogPostService";
+import api from "../../api/api";
 import "./blogPost.css";
 import banner from "../../assets/img/NettCorpSolutions - logo.png";
 
@@ -9,19 +10,45 @@ const BlogPost = () => {
   const post = getPostData(slug);
   const recentPosts = getLatestPosts();
 
-  // Estado para o formulário de comentários
   const [commentForm, setCommentForm] = useState({
-    comment: "",
-    name: "",
+    comentario: "",
+    nome: "",
     email: "",
     site: "",
     saveData: false,
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você implementaria a lógica para salvar o comentário
-    console.log("Comentário enviado:", commentForm);
+    console.log("Enviando comentário:", commentForm);
+
+    try {
+      const dadosParaEnviar = {
+        nome: commentForm.nome,
+        email: commentForm.email,
+        comentario: commentForm.comentario,
+        site: commentForm.site,
+        postId: slug || "post-padrao",
+      };
+
+      console.log("Dados formatados para envio:", dadosParaEnviar);
+
+      const response = await api.post("/blog/comment", dadosParaEnviar);
+      console.log("Resposta do servidor:", response);
+
+      setCommentForm({
+        comentario: "",
+        nome: "",
+        email: "",
+        site: "",
+        saveData: false,
+      });
+
+      alert("Comentário enviado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar comentário:", error);
+      alert("Erro ao enviar comentário. Por favor, tente novamente.");
+    }
   };
 
   const handleChange = (e) => {
@@ -102,23 +129,23 @@ const BlogPost = () => {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="comment">Comentário *</label>
+              <label htmlFor="comentario">Comentário *</label>
               <textarea
-                id="comment"
-                name="comment"
-                value={commentForm.comment}
+                id="comentario"
+                name="comentario"
+                value={commentForm.comentario}
                 onChange={handleChange}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="name">Nome *</label>
+              <label htmlFor="nome">Nome *</label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={commentForm.name}
+                id="nome"
+                name="nome"
+                value={commentForm.nome}
                 onChange={handleChange}
                 required
               />
@@ -139,7 +166,7 @@ const BlogPost = () => {
             <div className="form-group">
               <label htmlFor="site">Site</label>
               <input
-                type="url"
+                type="text"
                 id="site"
                 name="site"
                 value={commentForm.site}
