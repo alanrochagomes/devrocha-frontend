@@ -1,100 +1,142 @@
-import React from "react";
+import React, { useState } from "react";
+import api from "../../api/api";
 import "./Contato.css";
 
 const Contato = () => {
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    assunto: "",
+    mensagem: "",
+    autorizouContato: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Enviando dados do formulário:", formData);
+
+    try {
+      const response = await api.post("/contato/submit", formData);
+      console.log("Resposta do servidor:", response);
+
+      alert("Mensagem enviada com sucesso! Em breve entraremos em contato.");
+      setFormData({
+        nome: "",
+        email: "",
+        telefone: "",
+        assunto: "",
+        mensagem: "",
+        autorizouContato: false,
+      });
+    } catch (error) {
+      console.error("Erro detalhado:", error);
+      alert("Erro ao enviar mensagem. Por favor, tente novamente.");
+    }
+  };
+
   return (
     <div className="contato-container">
-      <h1>Contato</h1>
-
-      <div className="contato-info">
-        <div className="info-item">
-          {/* TODO: <div className="icon-wrapper">
-            <i className="far fa-envelope"></i>
-          </div> */}
-          <div className="info-content">
-            <h3>E-mail</h3>
-            <p>nettcorpsolutions@mail.com</p>
-          </div>
-        </div>
-
-        <div className="info-item">
-          {/* TODO: <div className="icon-wrapper">
-            <i className="fab fa-whatsapp"></i>
-          </div> */}
-          <div className="info-content">
-            <h3>WhatsApp</h3>
-            <p>(21) 998579960</p>
-          </div>
-        </div>
-
-        <div className="info-item">
-          {/* TODO: <div className="icon-wrapper">
-            <i className="fas fa-phone-alt"></i>
-          </div> */}
-          <div className="info-content">
-            <h3>Telefone</h3>
-            <p>(21) 9857-9960</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="formulario-contato">
+      <section className="contato-form-section">
         <h2>Formulário de Contato</h2>
-        <p>Envie sua mensagem abaixo através do formulário de contato.</p>
-
-        <form>
+        <form className="contato-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Nome Completo</label>
-            <input type="text" placeholder="Nome e Sobrenome" />
+            <label>
+              Nome Completo <span className="required">*</span>
+            </label>
+            <input
+              type="text"
+              name="nome"
+              value={formData.nome}
+              onChange={handleInputChange}
+              required
+              placeholder="Seu nome completo"
+            />
           </div>
 
           <div className="form-group">
-            <label>E-mail</label>
-            <input type="email" placeholder="nome@email.com" />
-          </div>
-
-          <div className="form-group cargo-empresa">
-            <div>
-              <label>Cargo</label>
-              <input type="text" placeholder="Gerente" />
-            </div>
-            <span className="na"></span>
-            <div>
-              <label>Empresa</label>
-              <input type="text" placeholder="Empresa" />
-            </div>
+            <label>
+              E-mail <span className="required">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              placeholder="seu@email.com"
+            />
           </div>
 
           <div className="form-group">
-            <label>Orçamento</label>
-            <select>
-              <option value="">Selecione um valor</option>
-              <option value="1">Até R$ 50</option>
-              <option value="2">Até R$ 100</option>
-              <option value="3">Até R$ 500</option>
-              <option value="4">Até R$ 1.000</option>
-              <option value="5">Até R$ 5.000</option>
-              <option value="6">R$ 5.000 - R$ 10.000</option>
-              <option value="7">R$ 10.000 - R$ 20.000</option>
-              <option value="8">Acima de R$ 20.000</option>
-            </select>
+            <label>
+              Telefone / WhatsApp <span className="required">*</span>
+            </label>
+            <input
+              type="tel"
+              name="telefone"
+              value={formData.telefone}
+              onChange={handleInputChange}
+              required
+              placeholder="(00) 00000-0000"
+            />
           </div>
 
           <div className="form-group">
-            <label>Descrição do projeto</label>
+            <label>
+              Assunto <span className="required">*</span>
+            </label>
+            <input
+              type="text"
+              name="assunto"
+              value={formData.assunto}
+              onChange={handleInputChange}
+              required
+              placeholder="Assunto da mensagem"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>
+              Mensagem <span className="required">*</span>
+            </label>
             <textarea
-              placeholder="Aqui você pode descrever um pouco sobre o projeto, detalhes como objetivos, prazos e referências."
-              rows="4"
+              name="mensagem"
+              value={formData.mensagem}
+              onChange={handleInputChange}
+              required
+              rows="5"
+              placeholder="Digite sua mensagem"
             ></textarea>
           </div>
 
-          <div className="recaptcha"></div>
+          <div className="form-group checkbox">
+            <label>
+              <input
+                type="checkbox"
+                name="autorizouContato"
+                checked={formData.autorizouContato}
+                onChange={handleInputChange}
+                required
+              />
+              Autorizo que este site armazene minhas informações enviadas para
+              que possam responder o meu contato.
+            </label>
+          </div>
 
           <button type="submit" className="enviar-btn">
-            Enviar mensagem
+            Enviar Mensagem
           </button>
         </form>
-      </div>
+      </section>
     </div>
   );
 };

@@ -1,8 +1,39 @@
 import React, { useState } from "react";
 import "./FaleConosco.css";
+import api from "../../api/api";
 
 const FaleConosco = () => {
-  const [tipoSolicitacao, setTipoSolicitacao] = useState("");
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    tipoSolicitacao: "",
+    detalhes: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api.post("/faleconosco/submit", formData);
+      alert("Solicitação enviada com sucesso! Em breve entraremos em contato.");
+      setFormData({
+        nome: "",
+        email: "",
+        tipoSolicitacao: "",
+        detalhes: "",
+      });
+    } catch (error) {
+      alert("Erro ao enviar solicitação. Por favor, tente novamente.");
+      console.error("Erro:", error);
+    }
+  };
 
   return (
     <div className="fale-conosco-container">
@@ -12,22 +43,37 @@ const FaleConosco = () => {
       </p>
 
       <div className="formulario-fale-conosco">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Nome Completo</label>
-            <input type="text" placeholder="Seu nome completo" required />
+            <input
+              type="text"
+              name="nome"
+              value={formData.nome}
+              onChange={handleInputChange}
+              placeholder="Seu nome completo"
+              required
+            />
           </div>
 
           <div className="form-group">
             <label>E-mail cadastrado</label>
-            <input type="email" placeholder="seu.email@exemplo.com" required />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="seu.email@exemplo.com"
+              required
+            />
           </div>
 
           <div className="form-group">
             <label>Tipo de Solicitação</label>
             <select
-              value={tipoSolicitacao}
-              onChange={(e) => setTipoSolicitacao(e.target.value)}
+              name="tipoSolicitacao"
+              value={formData.tipoSolicitacao}
+              onChange={handleInputChange}
               required
             >
               <option value="">Selecione o tipo de solicitação</option>
@@ -42,13 +88,16 @@ const FaleConosco = () => {
           <div className="form-group">
             <label>Detalhes da Solicitação</label>
             <textarea
+              name="detalhes"
+              value={formData.detalhes}
+              onChange={handleInputChange}
               placeholder="Descreva detalhadamente sua solicitação. Quanto mais informações você fornecer, melhor poderemos ajudá-lo."
               rows="5"
               required
             ></textarea>
           </div>
 
-          {tipoSolicitacao === "alteracao_senha" && (
+          {formData.tipoSolicitacao === "alteracao_senha" && (
             <div className="aviso-senha">
               <p>
                 <i className="fas fa-info-circle"></i>

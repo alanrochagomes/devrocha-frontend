@@ -1,10 +1,55 @@
 import React, { useState } from "react";
 import "./Servicos.css";
+import api from "../../api/api";
 
 const Servicos = () => {
   const [planoTipo, setPlanoTipo] = useState("mensal");
   const [categoriaAtiva, setCategoriaAtiva] = useState("todos");
   const [activeQuestion, setActiveQuestion] = useState(null);
+
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    planoInteresse: "",
+    tipoServico: "",
+    tipoPagamento: "",
+    prazo: "",
+    orcamento: "",
+    mensagem: "",
+    autorizouContato: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api.post("/services/request", formData);
+      alert("Solicitação enviada com sucesso! Em breve entraremos em contato.");
+      setFormData({
+        nome: "",
+        telefone: "",
+        email: "",
+        planoInteresse: "",
+        tipoServico: "",
+        tipoPagamento: "",
+        prazo: "",
+        orcamento: "",
+        mensagem: "",
+        autorizouContato: false,
+      });
+    } catch (error) {
+      alert("Erro ao enviar solicitação. Por favor, tente novamente.");
+      console.error("Erro:", error);
+    }
+  };
 
   const scrollToSolicitacao = () => {
     document.querySelector(".solicitar-site").scrollIntoView({
@@ -376,34 +421,61 @@ const Servicos = () => {
 
       <section className="solicitar-site">
         <h2>SOLICITAR CRIAÇÃO DE SITE</h2>
-        <form className="solicitar-form">
+        <form className="solicitar-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>
               Nome Completo <span className="required">*</span>
             </label>
-            <input type="text" required placeholder="Seu nome completo" />
+            <input
+              type="text"
+              name="nome"
+              value={formData.nome}
+              onChange={handleInputChange}
+              required
+              placeholder="Seu nome completo"
+            />
           </div>
 
           <div className="form-group">
             <label>
               Telefone / WhatsApp + DDD <span className="required">*</span>
             </label>
-            <input type="tel" required placeholder="(00) 00000-0000" />
+            <input
+              type="tel"
+              name="telefone"
+              value={formData.telefone}
+              onChange={handleInputChange}
+              required
+              placeholder="(00) 00000-0000"
+            />
           </div>
 
           <div className="form-group">
             <label>
               E-mail <span className="required">*</span>
             </label>
-            <input type="email" required placeholder="seu@email.com" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              placeholder="seu@email.com"
+            />
           </div>
 
           <div className="form-group">
             <label>
               Qual plano você tem interesse? <span className="required">*</span>
             </label>
-            <select required>
+            <select
+              name="planoInteresse"
+              value={formData.planoInteresse}
+              onChange={handleInputChange}
+              required
+            >
               <option value="">- Selecione Uma Opção -</option>
+              <option value="nenhum">Nenhum</option>
               <option value="basico">Plano Básico</option>
               <option value="standard">Plano Standard</option>
               <option value="premium">Plano Premium</option>
@@ -415,7 +487,12 @@ const Servicos = () => {
               Qual tipo de serviço você deseja?{" "}
               <span className="required">*</span>
             </label>
-            <select required>
+            <select
+              name="tipoServico"
+              value={formData.tipoServico}
+              onChange={handleInputChange}
+              required
+            >
               <option value="">- Selecione Uma Opção -</option>
               <option value="desenvolvimento-web">Desenvolvimento Web</option>
               <option value="ecommerce">E-commerce</option>
@@ -432,8 +509,14 @@ const Servicos = () => {
             <label>
               Tipo de Pagamento Preferido <span className="required">*</span>
             </label>
-            <select required>
+            <select
+              name="tipoPagamento"
+              value={formData.tipoPagamento}
+              onChange={handleInputChange}
+              required
+            >
               <option value="">- Selecione Uma Opção -</option>
+              <option value="avista">À Vista</option>
               <option value="mensal">Mensal</option>
               <option value="anual">Anual (Economia de até 36%)</option>
             </select>
@@ -443,7 +526,12 @@ const Servicos = () => {
             <label>
               Prazo Desejado <span className="required">*</span>
             </label>
-            <select required>
+            <select
+              name="prazo"
+              value={formData.prazo}
+              onChange={handleInputChange}
+              required
+            >
               <option value="">- Selecione Uma Opção -</option>
               <option value="urgente">Urgente (até 15 dias)</option>
               <option value="normal">Normal (30 a 45 dias)</option>
@@ -453,8 +541,15 @@ const Servicos = () => {
 
           <div className="form-group">
             <label>Orçamento Aproximado</label>
-            <select>
+            <select
+              name="orcamento"
+              value={formData.orcamento}
+              onChange={handleInputChange}
+            >
               <option value="">- Selecione Uma Opção -</option>
+              <option value="50">R$ 50</option>
+              <option value="100">R$ 100</option>
+              <option value="1000">R$ 1.000</option>
               <option value="ate-3000">Até R$ 3.000</option>
               <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
               <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
@@ -467,6 +562,9 @@ const Servicos = () => {
               Mensagem <span className="required">*</span>
             </label>
             <textarea
+              name="mensagem"
+              value={formData.mensagem}
+              onChange={handleInputChange}
               required
               rows="5"
               placeholder="Descreva seu projeto, funcionalidades desejadas e outros detalhes importantes"
@@ -475,7 +573,13 @@ const Servicos = () => {
 
           <div className="form-group checkbox">
             <label>
-              <input type="checkbox" required />
+              <input
+                type="checkbox"
+                name="autorizouContato"
+                checked={formData.autorizouContato}
+                onChange={handleInputChange}
+                required
+              />
               Autorizo que este site armazene minhas informações enviadas para
               que possam responder o meu contato.
             </label>
