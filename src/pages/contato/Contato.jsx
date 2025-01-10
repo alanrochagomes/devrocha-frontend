@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../../api/api";
 import "./Contato.css";
 
@@ -42,6 +42,27 @@ const Contato = () => {
       alert("Erro ao enviar mensagem. Por favor, tente novamente.");
     }
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const backToTopButton = document.getElementById("back-to-top");
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="contato-container">
@@ -137,6 +158,26 @@ const Contato = () => {
           </button>
         </form>
       </section>
+
+      <button
+        id="back-to-top"
+        onClick={scrollToTop}
+        style={{
+          display: "none",
+          position: "fixed",
+          bottom: "120px",
+          right: "20px",
+          zIndex: "1000",
+          padding: "10px 15px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        ↑ Topo
+      </button>
     </div>
   );
 };

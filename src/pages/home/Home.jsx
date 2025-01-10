@@ -35,7 +35,26 @@ const Home = () => {
       once: false,
       offset: 200,
     });
+
+    const handleScroll = () => {
+      const backToTopButton = document.getElementById("back-to-top");
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const beneficios = [
     {
@@ -341,7 +360,6 @@ const Home = () => {
       </section>
       <WhatsAppButton />
 
-      {/* Seção de Manutenção */}
       <section className="maintenance-section" data-aos="fade-up">
         <div className="maintenance-content">
           <div className="maintenance-text" data-aos="fade-right">
@@ -383,7 +401,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção de Planejamento de Projetos */}
       <section className="planning-section" data-aos="fade-up">
         <div className="planning-content">
           <div className="planning-visual" data-aos="fade-right">
@@ -428,7 +445,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção de Atualização de Cadastro */}
       <section className="update-section" data-aos="fade-up">
         <div className="update-content">
           <div className="update-text" data-aos="fade-right">
@@ -465,7 +481,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Nova Seção de Vantagens do Usuário */}
       <section className="user-benefits-section" data-aos="fade-up">
         <div className="user-benefits-content">
           <div className="user-benefits-text" data-aos="fade-right">
@@ -516,7 +531,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção de Relatórios Semanais */}
       <section className="weekly-reports-section" data-aos="fade-up">
         <div className="weekly-reports-content">
           <div className="weekly-reports-text" data-aos="fade-right">
@@ -553,7 +567,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção de Comunicação no Discord */}
       <section className="discord-communication-section" data-aos="fade-up">
         <div className="discord-communication-content">
           <div className="discord-communication-text" data-aos="fade-right">
@@ -599,6 +612,26 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <button
+        id="back-to-top"
+        onClick={scrollToTop}
+        style={{
+          display: "none",
+          position: "fixed",
+          bottom: "120px",
+          right: "20px",
+          zIndex: "1000",
+          padding: "10px 15px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        ↑ Voltar ao topo
+      </button>
     </div>
   );
 };

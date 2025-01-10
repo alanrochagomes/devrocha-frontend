@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Servicos.css";
 import api from "../../api/api";
 
@@ -56,6 +56,10 @@ const Servicos = () => {
       behavior: "smooth",
       block: "start",
     });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const planos = [
@@ -294,6 +298,23 @@ const Servicos = () => {
         "Sim, recomendamos atualizações regulares tanto de conteúdo quanto de tecnologia para manter seu site seguro, atual e bem posicionado nos buscadores.",
     },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const backToTopButton = document.getElementById("back-to-top");
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="servicos-container">
@@ -645,6 +666,26 @@ const Servicos = () => {
           ))}
         </div>
       </section>
+
+      <button
+        id="back-to-top"
+        onClick={scrollToTop}
+        style={{
+          display: "none",
+          position: "fixed",
+          bottom: "120px",
+          right: "20px",
+          zIndex: "1000",
+          padding: "10px 15px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        ↑ Voltar ao topo
+      </button>
     </div>
   );
 };

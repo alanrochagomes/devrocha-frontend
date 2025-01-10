@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getPostData, getLatestPosts } from "./service/blogPostService";
 import api from "../../api/api";
@@ -57,6 +57,27 @@ const BlogPost = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const backToTopButton = document.getElementById("back-to-top");
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (!post) {
@@ -194,6 +215,26 @@ const BlogPost = () => {
           </form>
         </div>
       </div>
+
+      <button
+        id="back-to-top"
+        onClick={scrollToTop}
+        style={{
+          display: "none",
+          position: "fixed",
+          bottom: "120px",
+          right: "20px",
+          zIndex: "1000",
+          padding: "10px 15px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        ↑ Voltar ao topo
+      </button>
     </>
   );
 };
