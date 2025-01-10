@@ -17,6 +17,7 @@ import Blog from "./pages/blog/blog";
 import BlogPost from "./pages/blog/blogPost";
 import FaleConosco from "./pages/faleConosco/FaleConosco";
 import ProgressRequestForm from "./components/ProgressRequestForm/ProgressRequestForm";
+import CookieConsent from "./components/cookie/CookieConsent";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -44,6 +45,7 @@ const App = () => {
         </div>
         <Footer />
         <WhatsAppButton />
+        <CookieConsent />
       </div>
     </BrowserRouter>
   );
