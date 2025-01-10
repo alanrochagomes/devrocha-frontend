@@ -176,7 +176,7 @@ const Contato = () => {
           cursor: "pointer",
         }}
       >
-        ↑ Topo
+        ↑ Voltar ao topo
       </button>
     </div>
   );
