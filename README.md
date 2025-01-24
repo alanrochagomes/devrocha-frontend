@@ -1,5 +1,8 @@
 # NettCorpSolutions Frontend
 
+Documentação Geral do Projeto
+[**nettcorpsolutionsdocs**](https://github.com/NettCorpSolutions/nettcorpsolutions-docs)
+
 Este projeto é a interface de usuário do NettCorpSolutions, desenvolvido com React e outras bibliotecas modernas para criar uma experiência de usuário rica e interativa.
 
 ## Tecnologias Utilizadas
