@@ -1,50 +1,23 @@
-# NettCorpSolutions Frontend
+# alanrocha.dev.br
 
-Documentação Geral do Projeto
-[**nettcorpsolutionsdocs**](https://github.com/NettCorpSolutions/nettcorpsolutions-docs)
+Bem-vindo ao meu portfólio! Eu sou Alan Rocha, desenvolvedor web especializado na criação e manutenção de sites.
 
-Este projeto é a interface de usuário do NettCorpSolutions, desenvolvido com React e outras bibliotecas modernas para criar uma experiência de usuário rica e interativa.
+## ✨ Sobre
 
-## Tecnologias Utilizadas
+No **alanrocha.dev.br**, ofereço serviços de desenvolvimento web personalizados. Se você precisa de um site profissional, responsivo e otimizado, estou aqui para ajudar! Basta entrar em contato, descrever sua necessidade e eu cuidarei de todo o processo.
 
-- **React**: Biblioteca principal para construção da interface.
-- **React Router**: Para navegação entre páginas.
-- **Tailwind CSS**: Para estilização rápida e responsiva.
-- **FontAwesome**: Para ícones.
-- **AOS (Animate On Scroll)**: Para animações de rolagem.
-- **Lottie**: Para animações vetoriais.
-- **PrimeReact**: Componentes UI ricos.
-- **Nodemailer**: Para envio de emails (configurado no backend).
+## 📚 Serviços
+- Desenvolvimento de sites institucionais
+- Criação de lojas virtuais (E-commerce)
+- Manutenção e otimização de sites
+- Melhorias de performance e SEO
+- Soluções personalizadas conforme a necessidade do cliente
 
-## Estrutura do Projeto
+## 📞 Contato
+Se deseja um site profissional ou manutenção no seu projeto, entre em contato:
 
-- **public/**: Contém arquivos estáticos como imagens e o arquivo `index.html`.
-- **src/**: Contém o código-fonte do aplicativo.
-  - **components/**: Componentes React reutilizáveis.
-  - **api/**: Configurações e chamadas de API.
-  - **styles/**: Arquivos CSS para estilização.
+- **Site**: [alanrocha.dev.br](https://alanrocha.dev.br)
+- **Email**: contato@alanrocha.dev.br
 
-## Scripts Disponíveis
+Estou pronto para transformar sua ideia em realidade! 🌟
 
-No diretório do projeto, você pode executar:
-
-- `npm start`: Inicia o aplicativo em modo de desenvolvimento.
-- `npm test`: Executa os testes.
-- `npm run build`: Compila o aplicativo para produção.
-- `npm run eject`: Ejecta a configuração padrão do Create React App.
-
-## Configuração
-
-1. Clone o repositório.
-2. Instale as dependências com `npm install`.
-3. Inicie o servidor de desenvolvimento com `npm start`.
-
-<!--
-
-## Contribuição
-
-Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT. -->
