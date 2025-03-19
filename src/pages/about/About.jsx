@@ -10,11 +10,10 @@ const About = () => {
         <div className="about-section">
           <h2>Nossa História</h2>
           <p>
-            A <strong>NettCorpSolutions</strong> é uma empresa especializada em
-            desenvolvimento web e soluções tecnológicas, fundada com o propósito
-            de transformar ideias em realidade digital. Nossa jornada é marcada
-            pelo compromisso com a inovação e excelência em cada projeto que
-            realizamos.
+            A <strong>DevRocha</strong> é especializado em soluções web e
+            tecnológicas, com o objetivo de transformar ideias em realidade
+            digital. A jornada é marcada pelo compromisso com a inovação e a
+            excelência em cada projeto realizado.
           </p>
         </div>
 
@@ -64,7 +63,7 @@ const About = () => {
               </ul>
             </div>
 
-            <div className="service-item">
+            {/* <div className="service-item">
               <h3>Consultoria</h3>
               <ul>
                 <li>Análise de requisitos</li>
@@ -73,7 +72,7 @@ const About = () => {
                 <li>Segurança da informação</li>
                 <li>Transformação digital</li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 

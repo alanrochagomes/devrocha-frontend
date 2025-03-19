@@ -122,7 +122,7 @@ const FaleConosco = () => {
           </div>
           <div className="contato-item">
             <i className="far fa-envelope"></i>
-            <p>atendimentonettcorpsolutions@mail.com</p>
+            <p>contato@devrocha.com.br</p>
           </div>
           <div className="contato-item">
             <i className="fab fa-whatsapp"></i>

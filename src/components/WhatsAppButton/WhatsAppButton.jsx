@@ -3,7 +3,7 @@ import "./WhatsAppButton.css";
 
 const WhatsAppButton = () => {
   const message =
-    "Olá! Sou Alan da equipe NettCorpSolutions. estou à disposição para ajudá-lo(a). Como posso ajudar?";
+    "Olá! Sou o Alan. Estou à disposição para ajudá-lo(a). Como posso assisti-lo(a) hoje?";
   const encodedMessage = encodeURIComponent(message);
 
   return (

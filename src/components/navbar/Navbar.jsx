@@ -58,7 +58,7 @@ const Navbar = ({ user, setUser }) => {
     <>
       <nav className="navbar">
         <div className="navbar-brand">
-          <Link to="/">NettCorpSolutions</Link>
+          <Link to="/">DevRocha</Link>
           <button className="mobile-menu-button" onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? (
               <span className="close-icon">×</span>
@@ -71,7 +71,7 @@ const Navbar = ({ user, setUser }) => {
         {isMobileMenuOpen && (
           <div className="mobile-menu">
             <div className="mobile-menu-header">
-              <span className="mobile-brand">NettCorpSolutions</span>
+              <span className="mobile-brand">DevRocha</span>
               <button className="close-button" onClick={toggleMobileMenu}>
                 ×
               </button>
@@ -114,7 +114,7 @@ const Navbar = ({ user, setUser }) => {
                   className="mobile-login"
                   onClick={toggleMobileMenu}
                 >
-                  Área do Cliente
+                  {/* TODO: Área do Cliente */}
                 </Link>
               )}
             </div>
@@ -190,7 +190,7 @@ const Navbar = ({ user, setUser }) => {
                 className="area-cliente-btn"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Área do Cliente
+                {/* TODO: Área do Cliente */}
               </Link>
             )}
           </div>

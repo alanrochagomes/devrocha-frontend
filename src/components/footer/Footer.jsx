@@ -12,8 +12,7 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Sobre Nós</h3>
             <p>
-              Consultoria especializada em desenvolvimento web e soluções
-              tecnológicas.
+              Especializa no desenvolvimento de software e sites personalizados.
             </p>
           </div>
 
@@ -44,10 +43,10 @@ const Footer = () => {
             <li>
               <Link to="/projetos">Projetos</Link>
             </li>
-
+            {/* 
             <li>
               <Link to="/blog">Blog</Link>
-            </li>
+            </li> */}
 
             <li>
               <Link to="/contato">Contato</Link>
@@ -70,9 +69,8 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Contato</h3>
           <ul>
-            <li>✉ nettcorpsolutions@mail.com </li>
-            <li>✉ atendimentonettcorpsolutions@mail.com</li>
-            {/* <li>✉ suportenettcorpsolutions@mail.com</li> */}
+            <li>✉ contato@devrocha.com.br</li>
+
             <li>📞(21) 9985-79960</li>
             <li>🏢 Endereço: Rio de Janeiro, RJ</li>
           </ul>
@@ -81,9 +79,8 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          © Copyright 2025 NettCorpSolutions – Inovação em Tecnologia, TI e
-          Soluções Digitais
-          {/*&copy; 2025 NettCorpSolutions. */}. Todos os direitos reservados.
+          © 2025 DevRocha – Desenvolvimento, Manutenção, Design e Soluções
+          Digitais.
         </p>
       </div>
     </footer>

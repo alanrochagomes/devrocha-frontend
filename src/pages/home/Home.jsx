@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
-import banner from "../../assets/img/NettCorpSolutions - logo.png";
+
 import reactLogo from "../../pages/home/img/react.png";
 import nodejsLogo from "../../pages/home/img/nodejs.png";
 import typescriptLogo from "../../pages/home/img/typescript.svg";
@@ -13,7 +13,7 @@ import mongodbLogo from "../../pages/home/img/mongodb.png";
 
 const WhatsAppButton = () => {
   const message =
-    "Olá! Sou Alan da equipe NettCorpSolutions. estou à disposição para ajudá-lo(a). Como posso ajudar?";
+    "Olá! Sou o Alan. Estou à disposição para ajudá-lo(a). Como posso assisti-lo(a) hoje?";
   const encodedMessage = encodeURIComponent(message);
 
   return (
@@ -110,10 +110,15 @@ const Home = () => {
           <h2>Sobre nós</h2>
           <div className="sobre-text-content">
             <p>
-              Desenvolvimento de software, manutenção de sistemas e design de
-              interfaces. Nossa equipe de desenvolvedores e designers trabalha
-              com as tecnologias mais modernas do mercado para entregar soluções
-              robustas e escaláveis.
+              A <strong>DevRocha</strong> se especializa no desenvolvimento de
+              software e sites personalizados, oferecendo soluções completas e
+              adaptáveis às necessidades dos nossos clientes. Além disso,
+              prestamos serviços contínuos de manutenção de sistemas e sites,
+              garantindo que suas plataformas estejam sempre atualizadas e
+              operando de forma eficiente. Também nos destacamos no design de
+              interfaces, criando experiências de usuário intuitivas e
+              atraentes, com foco na usabilidade e no desempenho de cada
+              projeto.
             </p>
           </div>
         </div>
@@ -159,57 +164,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* TODO: <section className="resultados-section" data-aos="fade-up">
-        <div className="resultados-content">
-          <h2>Nossos Resultados</h2>
-          <div className="resultados-grid">
-            <div className="resultado-card" data-aos="fade-up">
-              <div className="resultado-icon">💻</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+50</span>
-                <p>Projetos Entregues</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Desenvolvimento Web</h3>
-                <p>Sites e sistemas desenvolvidos com excelência</p>
-              </div>
-            </div>
-
-            <div
-              className="resultado-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="resultado-icon">🛠️</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+100</span>
-                <p>Clientes Atendidos</p>
-              </div>
-              <div className="resultado-info">
-                <h3>Suporte Técnico</h3>
-                <p>Manutenção e suporte contínuo</p>
-              </div>
-            </div>
-
-            <div
-              className="resultado-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="resultado-icon">🎨</div>
-              <div className="resultado-stats">
-                <span className="stats-number">+30</span>
-                <p>Designs Criados</p>
-              </div>
-              <div className="resultado-info">
-                <h3>UI/UX Design</h3>
-                <p>Interfaces modernas e intuitivas</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="dev-web-section" data-aos="fade-up">
         <div className="dev-web-content">
@@ -274,7 +228,7 @@ const Home = () => {
         <div className="design-content">
           <div className="design-visual" data-aos="fade-right">
             <img
-              src="https://cdn.dribbble.com/users/1059583/screenshots/4171367/coding-freak.gif"
+              src="https://agenciavisao360.com.br/wp-content/uploads/2021/11/ux-designer-360-1.gif"
               alt="Design Process Animation"
               className="design-animation"
             />
@@ -394,6 +348,7 @@ const Home = () => {
           <div className="maintenance-visual" data-aos="fade-left">
             <img
               src="https://cdn.dribbble.com/users/1708816/screenshots/15637256/media/f9826f0af8a49462f048262a8502035b.gif"
+              // src="https://www.linknacional.com.br/wp-content/uploads/2023/10/manutencao-de-site.webp"
               alt="Maintenance Animation"
               className="maintenance-animation"
             />
@@ -445,7 +400,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="update-section" data-aos="fade-up">
+      {/* TODO: <section className="update-section" data-aos="fade-up">
         <div className="update-content">
           <div className="update-text" data-aos="fade-right">
             <h2>Atualize Seus Dados</h2>
@@ -611,7 +566,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <button
         id="back-to-top"

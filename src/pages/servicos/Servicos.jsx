@@ -65,7 +65,7 @@ const Servicos = () => {
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$299,90" : "R$2.999,00",
+      preco: planoTipo === "mensal" ? "R$49,90" : "R$598,80",
       periodo: planoTipo === "mensal" ? "/mês" : "/ano",
       features: [
         "Site Responsivo",
@@ -74,11 +74,11 @@ const Servicos = () => {
         "SSL Gratuito",
         "Suporte 8x5",
       ],
-      destaque: false,
+      destaque: true,
     },
     {
       titulo: "Standard",
-      preco: planoTipo === "mensal" ? "R$499,90" : "R$4.999,00",
+      preco: planoTipo === "mensal" ? "R$69,90" : "R$838,8",
       periodo: planoTipo === "mensal" ? "/mês" : "/ano",
       features: [
         "Site Responsivo",
@@ -89,11 +89,11 @@ const Servicos = () => {
         "Painel Administrativo",
         "Blog Integrado",
       ],
-      destaque: true,
+      destaque: false,
     },
     {
       titulo: "Premium",
-      preco: planoTipo === "mensal" ? "R$999,90" : "R$9.999,00",
+      preco: planoTipo === "mensal" ? "R$99,90" : "R$1.198,8",
       periodo: planoTipo === "mensal" ? "/mês" : "/ano",
       features: [
         "Site Responsivo",
@@ -119,18 +119,18 @@ const Servicos = () => {
       features: ["Design Responsivo", "SEO Otimizado", "Painel Administrativo"],
       categorias: ["todos", "criacao"],
     },
-    {
-      titulo: "E-commerce",
-      preco: "A partir de R$ 4.500",
-      descricao: "Sua loja virtual completa",
-      icon: "🛍️",
-      features: [
-        "Pagamentos Online",
-        "Gestão de Estoque",
-        "Múltiplos Vendedores",
-      ],
-      categorias: ["todos", "criacao"],
-    },
+    // {
+    //   titulo: "E-commerce",
+    //   preco: "A partir de R$ 4.500",
+    //   descricao: "Sua loja virtual completa",
+    //   icon: "🛍️",
+    //   features: [
+    //     "Pagamentos Online",
+    //     "Gestão de Estoque",
+    //     "Múltiplos Vendedores",
+    //   ],
+    //   categorias: ["todos", "criacao"],
+    // },
     {
       titulo: "Aplicações Web",
       preco: "A partir de R$ 8.000",
@@ -139,30 +139,7 @@ const Servicos = () => {
       features: ["Dashboard Personalizado", "APIs RESTful", "Integrações"],
       categorias: ["todos", "criacao"],
     },
-    {
-      titulo: "UI/UX Design",
-      preco: "A partir de R$ 2.000",
-      descricao: "Design moderno e intuitivo",
-      icon: "🎨",
-      features: ["Protótipos", "Design System", "Testes de Usabilidade"],
-      categorias: ["todos", "design"],
-    },
-    {
-      titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 200/mês",
-      descricao: "Suporte e atualizações contínuas",
-      icon: "🔧",
-      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
-      categorias: ["todos", "manutencao"],
-    },
-    {
-      titulo: "Marketing Digital",
-      preco: "A partir de R$ 800/mês",
-      descricao: "Estratégias para crescimento",
-      icon: "📈",
-      features: ["SEO", "Google Ads", "Analytics"],
-      categorias: ["todos", "marketing"],
-    },
+
     {
       titulo: "Landing Pages",
       preco: "A partir de R$ 1.500",
@@ -171,6 +148,34 @@ const Servicos = () => {
       features: ["A/B Testing", "Otimização de Conversão", "Analytics"],
       categorias: ["todos", "criacao"],
     },
+
+    {
+      titulo: "Manutenção Mensal",
+      preco: "A partir de R$ 200/mês",
+      descricao: "Suporte e atualizações contínuas",
+      icon: "🔧",
+      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
+      categorias: ["todos", "manutencao"],
+    },
+
+    {
+      titulo: "UI/UX Design",
+      preco: "A partir de R$ 2.000",
+      descricao: "Design moderno e intuitivo",
+      icon: "🎨",
+      features: ["Protótipos", "Design System", "Testes de Usabilidade"],
+      categorias: ["todos", "design"],
+    },
+
+    // {
+    //   titulo: "Marketing Digital",
+    //   preco: "A partir de R$ 800/mês",
+    //   descricao: "Estratégias para crescimento",
+    //   icon: "📈",
+    //   features: ["SEO", "Google Ads", "Analytics"],
+    //   categorias: ["todos", "marketing"],
+    // },
+
     {
       titulo: "Hospedagem Cloud",
       preco: "A partir de R$ 100/mês",

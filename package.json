@@ -1,6 +1,6 @@
 {
-  "name": "nettcorpsolutions-frontend",
-  "version": "0.1.0",
+  "name": "devrocha-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
