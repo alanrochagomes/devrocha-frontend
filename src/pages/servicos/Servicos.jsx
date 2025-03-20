@@ -112,8 +112,17 @@ const Servicos = () => {
 
   const servicos = [
     {
+      titulo: "Manutenção Mensal",
+      preco: "A partir de R$ 19,99/mês",
+      descricao: "Suporte e atualizações contínuas",
+      icon: "🔧",
+      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
+      categorias: ["todos", "manutencao"],
+    },
+
+    {
       titulo: "Desenvolvimento Web",
-      preco: "A partir de R$ 2.500",
+      preco: "A partir de R$ 598,80",
       descricao: "Sites profissionais e responsivos",
       icon: "💻",
       features: ["Design Responsivo", "SEO Otimizado", "Painel Administrativo"],
@@ -133,7 +142,7 @@ const Servicos = () => {
     // },
     {
       titulo: "Aplicações Web",
-      preco: "A partir de R$ 8.000",
+      preco: "Preço sob consulta",
       descricao: "Sistemas web personalizados",
       icon: "⚙️",
       features: ["Dashboard Personalizado", "APIs RESTful", "Integrações"],
@@ -142,7 +151,7 @@ const Servicos = () => {
 
     {
       titulo: "Landing Pages",
-      preco: "A partir de R$ 1.500",
+      preco: "Preço sob consulta",
       descricao: "Páginas de alta conversão",
       icon: "🎯",
       features: ["A/B Testing", "Otimização de Conversão", "Analytics"],
@@ -150,17 +159,8 @@ const Servicos = () => {
     },
 
     {
-      titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 200/mês",
-      descricao: "Suporte e atualizações contínuas",
-      icon: "🔧",
-      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
-      categorias: ["todos", "manutencao"],
-    },
-
-    {
       titulo: "UI/UX Design",
-      preco: "A partir de R$ 2.000",
+      preco: "Preço sob consulta",
       descricao: "Design moderno e intuitivo",
       icon: "🎨",
       features: ["Protótipos", "Design System", "Testes de Usabilidade"],
@@ -178,7 +178,7 @@ const Servicos = () => {
 
     {
       titulo: "Hospedagem Cloud",
-      preco: "A partir de R$ 100/mês",
+      preco: "Preço sob consulta",
       descricao: "Infraestrutura escalável",
       icon: "☁️",
       features: ["SSL Gratuito", "CDN Global", "Backup Automático"],
@@ -251,15 +251,21 @@ const Servicos = () => {
   // ];
 
   const faqQuestions = [
+    // {
+    //   question: "Usuários cadastrados têm prioridade?",
+    //   answer:
+    //     "Sim, usuários cadastrados têm prioridade no atendimento. No entanto, usuários não cadastrados também serão atendidos da mesma forma. Não é necessário se cadastrar para solicitar serviços, mas é recomendado para aproveitar vantagens como exclusividade e relatórios de progresso.",
+    // },
+    // {
+    //   question: "Assinantes de plano são cadastrados automaticamente?",
+    //   answer:
+    //     "Sim, assinantes de plano são cadastrados automaticamente, garantindo acesso imediato a todos os benefícios e priorização no atendimento. A senha de acesso será enviada por email e, após recebê-la, é recomendado que você edite a senha para garantir a segurança da sua conta.",
+    // },
+
     {
-      question: "Usuários cadastrados têm prioridade?",
+      question: "Quanto tempo demora para se criar um site?",
       answer:
-        "Sim, usuários cadastrados têm prioridade no atendimento. No entanto, usuários não cadastrados também serão atendidos da mesma forma. Não é necessário se cadastrar para solicitar serviços, mas é recomendado para aproveitar vantagens como exclusividade e relatórios de progresso.",
-    },
-    {
-      question: "Assinantes de plano são cadastrados automaticamente?",
-      answer:
-        "Sim, assinantes de plano são cadastrados automaticamente, garantindo acesso imediato a todos os benefícios e priorização no atendimento. A senha de acesso será enviada por email e, após recebê-la, é recomendado que você edite a senha para garantir a segurança da sua conta.",
+        "O prazo médio é de 30 a 45 dias, podendo variar de acordo com a complexidade do projeto e a agilidade na entrega dos conteúdos.",
     },
     {
       question: "Meu site aparecerá no Google?",
@@ -292,11 +298,7 @@ const Servicos = () => {
       answer:
         "Sim, todos os nossos sites são desenvolvidos com design responsivo, garantindo uma excelente experiência em qualquer dispositivo (computadores, tablets e smartphones).",
     },
-    {
-      question: "Quanto tempo demora para se criar um site?",
-      answer:
-        "O prazo médio é de 30 a 45 dias, podendo variar de acordo com a complexidade do projeto e a agilidade na entrega dos conteúdos.",
-    },
+
     {
       question: "Um site de sucesso precisará de atualizações frequentes?",
       answer:
@@ -590,6 +592,7 @@ const Servicos = () => {
               <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
               <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
               <option value="acima-10000">Acima de R$ 10.000</option>
+              <option value="Preço sob consulta">Preço sob consulta</option>
             </select>
           </div>
 

@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import Contato from "./pages/contato/Contato";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 import Servicos from "./pages/servicos/Servicos";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Login from "./components/login/login";
@@ -31,7 +31,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/servicos" element={<Servicos />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/projetos" element={<Portfolio />} />
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
