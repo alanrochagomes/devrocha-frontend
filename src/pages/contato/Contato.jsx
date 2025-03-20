@@ -66,6 +66,74 @@ const Contato = () => {
 
   return (
     <div className="contato-container">
+      <h1>Entre em Contato</h1>
+      <p className="contact-description">
+        Estamos aqui para ajudar! Preencha o formulário abaixo e entraremos em
+        contato o mais breve possível.
+      </p>
+      <div className="contato-info">
+        <div className="info-item">
+          <span className="icon-wrapper">
+            <a href="mailto:contato@devrocha.com.br" title="Enviar E-mail">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </span>
+          <div className="info-content">
+            <h3>
+              <a
+                href="mailto:contato@devrocha.com.br"
+                style={{ textDecoration: "none", color: "#0066cc" }}
+              >
+                E-mail
+              </a>
+            </h3>
+            <p>contato@devrocha.com.br</p>
+          </div>
+        </div>
+        <div className="info-item">
+          <span className="icon-wrapper">
+            <a
+              href="https://wa.me/21998579960"
+              title="Enviar WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-whatsapp"></i>
+            </a>
+          </span>
+          <div className="info-content">
+            <h3>
+              <a
+                href="https://wa.me/21998579960"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "#0066cc" }}
+              >
+                WhatsApp
+              </a>
+            </h3>
+            <p>(21) 9985-79960</p>
+          </div>
+        </div>
+        <div className="info-item">
+          <span className="icon-wrapper">
+            <a href="tel:+5521998579960" title="Ligar">
+              <i className="fas fa-phone"></i>
+            </a>
+          </span>
+          <div className="info-content">
+            <h3>
+              <a
+                href="tel:+5521998579960"
+                style={{ textDecoration: "none", color: "#0066cc" }}
+              >
+                Telefone
+              </a>
+            </h3>
+            <p>(21) 9985-79960</p>
+          </div>
+        </div>
+      </div>
       <section className="contato-form-section">
         <h2>Formulário de Contato</h2>
         <form className="contato-form" onSubmit={handleSubmit}>
