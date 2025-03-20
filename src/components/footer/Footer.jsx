@@ -52,9 +52,9 @@ const Footer = () => {
               <Link to="/contato">Contato</Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="/fale-conosco">Fale Conosco</Link>
-            </li>
+            </li> */}
 
             <li>
               <Link to="/about">Quem Somos</Link>
