@@ -113,7 +113,7 @@ const Servicos = () => {
   const servicos = [
     {
       titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 19,99/mês",
+      preco: "A partir de R$ 99,90/mês",
       descricao: "Suporte e atualizações contínuas",
       icon: "🔧",
       features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
@@ -122,7 +122,7 @@ const Servicos = () => {
 
     {
       titulo: "Desenvolvimento Web",
-      preco: "A partir de R$ 598,80",
+      preco: "Preço sob consulta",
       descricao: "Sites profissionais e responsivos",
       icon: "💻",
       features: ["Design Responsivo", "SEO Otimizado", "Painel Administrativo"],

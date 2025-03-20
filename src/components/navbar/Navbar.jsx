@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaChevronDown } from "react-icons/fa";
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
+import logo from "../../assets/img/DevRocha.svg";
 
 const Navbar = ({ user, setUser }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -58,8 +59,8 @@ const Navbar = ({ user, setUser }) => {
     <>
       <nav className="navbar">
         <div className="navbar-brand">
-          <NavLink to="/" exact>
-            DevRocha
+          <NavLink to="/" exact className="navbar-link">
+            <img src={logo} alt="Logo-DevRocha" className="navbar-logo" />
           </NavLink>
           <button className="mobile-menu-button" onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? (
@@ -84,7 +85,7 @@ const Navbar = ({ user, setUser }) => {
                 onClick={toggleMobileMenu}
                 activeClassName="active"
               >
-                Home
+                Página Inicial
               </NavLink>
               <NavLink
                 to="/servicos"
@@ -143,7 +144,7 @@ const Navbar = ({ user, setUser }) => {
         <div className="desktop-menu">
           <div className="navbar-links">
             <NavLink to="/" exact activeClassName="active">
-              Home
+              Página Inicial
             </NavLink>
             <NavLink to="/servicos" activeClassName="active">
               Serviços

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getPostData, getLatestPosts } from "./service/blogPostService";
 import api from "../../api/api";
 import "./blogPost.css";
-import banner from "../../assets/img/NettCorpSolutions - logo.png";
+// import banner from "../../assets/img/NettCorpSolutions - logo.png";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -129,7 +129,7 @@ const BlogPost = () => {
 
       <div className="comments-section">
         <div className="author-info">
-          <img src={banner} alt="Equipe Editorial" className="author-avatar" />
+          {/* <img src={banner} alt="Equipe Editorial" className="author-avatar" /> */}
           <div className="author-details">
             <h3>Equipe Editorial</h3>
             <p>

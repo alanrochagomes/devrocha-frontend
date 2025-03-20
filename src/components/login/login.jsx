@@ -15,7 +15,7 @@ import { Dropdown } from "primereact/dropdown";
 import { InputMask } from "primereact/inputmask";
 import { RadioButton } from "primereact/radiobutton";
 import { PrimeIcons } from "primereact/api";
-import backgroundImage from "../../assets/img/NettCorpSolutions - logo.png";
+// import backgroundImage from "../../assets/img/NettCorpSolutions - logo.png";
 
 const Login = ({ setUser }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -284,7 +284,7 @@ const Login = ({ setUser }) => {
     <div
       className="login-container"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
+        // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

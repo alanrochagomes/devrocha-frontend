@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import api from "../../api/api";
+
+import emailjs from "emailjs-com";
 import "./Contato.css";
 
 const Contato = () => {
@@ -25,9 +26,14 @@ const Contato = () => {
     console.log("Enviando dados do formulário:", formData);
 
     try {
-      const response = await api.post("/contato/submit", formData);
-      console.log("Resposta do servidor:", response);
+      const response = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formData,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      );
 
+      console.log("Resposta do servidor:", response);
       alert("Mensagem enviada com sucesso! Em breve entraremos em contato.");
       setFormData({
         nome: "",

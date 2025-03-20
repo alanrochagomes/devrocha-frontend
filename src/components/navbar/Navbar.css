@@ -1,13 +1,15 @@
 .navbar {
-  background-color: #333333;
+  background-color: #000000;
   padding: 1rem 2rem;
   width: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-brand {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -29,6 +31,7 @@
   display: flex;
   gap: 2rem;
   margin-left: 2rem;
+  list-style: none;
 }
 
 .navbar-links a {
@@ -346,3 +349,18 @@
   background: linear-gradient(135deg, #002042, #0090b1);
   color: #ffffff;
 }
+
+.navbar-logo {
+  height: 34px;
+  width: auto;
+  max-width: 100%;
+  margin-right: 10px;
+  background: linear-gradient(135deg, #004fa3, #24acca);
+  color: wheat;
+}
+
+/* .navbar-title {
+  font-size: 1.5rem;
+  color: #0066cc;
+  font-weight: bold;
+} */

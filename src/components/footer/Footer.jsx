@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../footer/Footer.css";
 import ssl from "../../assets/img/ssl.png";
 import GoogleSafeBrowsing from "../../assets/img/Google Safe Browsing.png";
+import logo from "../assets/../../assets/img/DevRocha.svg";
 
 const Footer = () => {
   return (
@@ -10,6 +11,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-section">
+            <img src={logo} alt="logo-DevRocha" className="footer-logo" />
             <h3>Sobre Nós</h3>
             <p>
               Especializa no desenvolvimento de software e sites personalizados.
@@ -80,7 +82,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>
           © 2025 DevRocha – Desenvolvimento, Manutenção, Design e Soluções
-          Digitais.
+          Digitais. CNPJ 59.993.460/0001-00
         </p>
       </div>
     </footer>
