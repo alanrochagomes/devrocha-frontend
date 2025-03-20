@@ -1004,7 +1004,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Botão CTA */
 .cta-button {
   display: inline-block;
   margin-top: 2rem;
@@ -1176,4 +1175,31 @@
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+}
+
+.request-quote-button {
+  background: linear-gradient(135deg, #004fa3, #24acca);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.request-quote-button:hover {
+  background: linear-gradient(135deg, #002042, #0090b1);
+  color: #ffffff;
 }

@@ -98,7 +98,7 @@ const Home = () => {
           </h1>
           <p>Transformando ideias em soluções tecnológicas de alto impacto</p>
           <div className="hero-buttons">
-            <Link to="/contato" className="btn-primary">
+            <Link to="/contato" className="btn-primary request-quote-button">
               Solicite um orçamento
             </Link>
           </div>
