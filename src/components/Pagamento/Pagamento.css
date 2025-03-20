@@ -1,0 +1,37 @@
+.pagamento-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background-color: #f9f9f9; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+  font-size: 2rem; /* Tamanho do título */
+  color: #333; /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+p {
+  font-size: 1.2rem; /* Tamanho do texto */
+  color: #666; /* Cor do texto */
+  margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+}
+
+.pagamento-button {
+  background-color: #25d366; /* Cor do botão do WhatsApp */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px 30px; /* Espaçamento interno do botão */
+  font-size: 1.2rem; /* Tamanho da fonte do botão */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.pagamento-button:hover {
+  background-color: #1da851; /* Cor do botão ao passar o mouse */
+}
