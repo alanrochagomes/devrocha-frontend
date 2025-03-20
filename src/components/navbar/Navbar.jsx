@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaChevronDown } from "react-icons/fa";
 import UserSettingsModal from "../UserSettingsModal/UserSettingsModal";
@@ -58,7 +58,9 @@ const Navbar = ({ user, setUser }) => {
     <>
       <nav className="navbar">
         <div className="navbar-brand">
-          <Link to="/">DevRocha</Link>
+          <NavLink to="/" exact>
+            DevRocha
+          </NavLink>
           <button className="mobile-menu-button" onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? (
               <span className="close-icon">×</span>
@@ -77,45 +79,62 @@ const Navbar = ({ user, setUser }) => {
               </button>
             </div>
             <div className="mobile-menu-content">
-              <Link to="/" onClick={toggleMobileMenu}>
+              <NavLink
+                to="/"
+                onClick={toggleMobileMenu}
+                activeClassName="active"
+              >
                 Home
-              </Link>
-              <Link to="/servicos" onClick={toggleMobileMenu}>
+              </NavLink>
+              <NavLink
+                to="/servicos"
+                onClick={toggleMobileMenu}
+                activeClassName="active"
+              >
                 Serviços
-              </Link>
-              <Link to="/portfolio" onClick={toggleMobileMenu}>
+              </NavLink>
+              <NavLink
+                to="/projetos"
+                onClick={toggleMobileMenu}
+                activeClassName="active"
+              >
                 Projetos
-              </Link>
-
-              {/* <Link to="/blog" onClick={toggleMobileMenu}>
-                Blog
-              </Link> */}
-              {/* <Link to="/blog" onClick={toggleMobileMenu}>
-                NettStudios
-              </Link> */}
-              <Link to="/contato" onClick={toggleMobileMenu}>
+              </NavLink>
+              <NavLink
+                to="/contato"
+                onClick={toggleMobileMenu}
+                activeClassName="active"
+              >
                 Contato
-              </Link>
+              </NavLink>
               {isAuthenticated ? (
                 <>
-                  <Link to="/configuracoes" onClick={toggleMobileMenu}>
+                  <NavLink
+                    to="/configuracoes"
+                    onClick={toggleMobileMenu}
+                    activeClassName="active"
+                  >
                     Configurações
-                  </Link>
-                  <Link to="/andamento" onClick={toggleMobileMenu}>
+                  </NavLink>
+                  <NavLink
+                    to="/andamento"
+                    onClick={toggleMobileMenu}
+                    activeClassName="active"
+                  >
                     Andamento
-                  </Link>
+                  </NavLink>
                   <button className="logout-button" onClick={handleLogout}>
                     Sair
                   </button>
                 </>
               ) : (
-                <Link
-                  to="/login"
-                  className="mobile-login"
+                <a
+                  href="mailto:contato@devrocha.com.br"
+                  className="contact-button"
                   onClick={toggleMobileMenu}
                 >
-                  {/* TODO: Área do Cliente */}
-                </Link>
+                  Entrar em Contato
+                </a>
               )}
             </div>
           </div>
@@ -123,11 +142,18 @@ const Navbar = ({ user, setUser }) => {
 
         <div className="desktop-menu">
           <div className="navbar-links">
-            <Link to="/">Home</Link>
-            <Link to="/servicos">Serviços</Link>
-            <Link to="/portfolio">Projetos</Link>
-            {/* <Link to="/blog">Blog</Link> */}
-            <Link to="/contato">Contato</Link>
+            <NavLink to="/" exact activeClassName="active">
+              Home
+            </NavLink>
+            <NavLink to="/servicos" activeClassName="active">
+              Serviços
+            </NavLink>
+            <NavLink to="/projetos" activeClassName="active">
+              Projetos
+            </NavLink>
+            <NavLink to="/contato" activeClassName="active">
+              Contato
+            </NavLink>
           </div>
           <div className="navbar-auth">
             {isAuthenticated ? (
@@ -159,14 +185,14 @@ const Navbar = ({ user, setUser }) => {
                         </button>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/andamento"
                           className="dropdown-item"
                           onClick={closeDropdown}
                         >
                           <i className="fas fa-tasks"></i>
                           Andamento
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
                         <button
@@ -185,13 +211,12 @@ const Navbar = ({ user, setUser }) => {
                 </div>
               </div>
             ) : (
-              <Link
-                to="/login"
-                className="area-cliente-btn"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <a
+                href="mailto:contato@devrocha.com.br"
+                className="contact-button"
               >
-                {/* TODO: Área do Cliente */}
-              </Link>
+                Entrar em Contato
+              </a>
             )}
           </div>
         </div>
