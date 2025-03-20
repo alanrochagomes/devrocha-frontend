@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Servicos.css";
 import api from "../../api/api";
 
@@ -75,6 +76,7 @@ const Servicos = () => {
         "Suporte 8x5",
       ],
       destaque: true,
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a",
     },
     {
       titulo: "Standard",
@@ -90,6 +92,7 @@ const Servicos = () => {
         "Blog Integrado",
       ],
       destaque: false,
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6",
     },
     {
       titulo: "Premium",
@@ -107,6 +110,7 @@ const Servicos = () => {
         "API Personalizada",
       ],
       destaque: false,
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c938084955cc4800195b503ba2e2751",
     },
   ];
 
@@ -439,9 +443,14 @@ const Servicos = () => {
                   </li>
                 ))}
               </ul>
-              <button className="plano-btn" onClick={scrollToSolicitacao}>
+              <a
+                href={plano.link}
+                className="plano-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Escolher Plano
-              </button>
+              </a>
             </div>
           ))}
         </div>

@@ -96,7 +96,8 @@ const Contato = () => {
             <p>contato@devrocha.com.br</p>
           </div>
         </div>
-        <div className="info-item">
+
+        {/* <div className="info-item">
           <span className="icon-wrapper">
             <a
               href="https://wa.me/21998579960"
@@ -120,7 +121,8 @@ const Contato = () => {
             </h3>
             <p>(21) 9985-79960</p>
           </div>
-        </div>
+        </div> */}
+
         <div className="info-item">
           <span className="icon-wrapper">
             <a href="tel:+5521998579960" title="Ligar">

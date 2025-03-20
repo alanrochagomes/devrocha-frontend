@@ -622,20 +622,19 @@
 }
 
 .plano-btn {
-  background: #0066cc;
+  background-color: #0066cc;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
 }
 
-.plano-btn:hover {
-  background: #0052a3;
-}
+/* .plano-btn:hover {
+  background-color: #1da851;
+} */
 
 @media (max-width: 768px) {
   .planos-grid {

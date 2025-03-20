@@ -19,6 +19,8 @@ import FaleConosco from "./pages/faleConosco/FaleConosco";
 import ProgressRequestForm from "./components/ProgressRequestForm/ProgressRequestForm";
 import CookieConsent from "./components/cookie/CookieConsent";
 
+import Pagamento from "./components/Pagamento/Pagamento";
+
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -41,6 +43,8 @@ const App = () => {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/fale-conosco" element={<FaleConosco />} />
             <Route path="/andamento" element={<ProgressRequestForm />} />
+
+            <Route path="/pagamento" element={<Pagamento />} />
           </Routes>
         </div>
         <Footer />
