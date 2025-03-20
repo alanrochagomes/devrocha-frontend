@@ -1,6 +1,7 @@
 .portfolio-container {
   padding: 6rem 8%;
   background: #f8f9fa;
+  margin-bottom: 20vh;
 }
 
 .portfolio-header {
@@ -128,5 +129,10 @@
 
   .title {
     font-size: 2rem;
+  }
+
+  .back-to-top-button {
+    bottom: 20px;
+    right: 20px;
   }
 }

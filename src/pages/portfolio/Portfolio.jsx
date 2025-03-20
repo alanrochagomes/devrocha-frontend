@@ -27,22 +27,13 @@ const Portfolio = () => {
   return (
     <div className="portfolio-container">
       <div className="portfolio-header">
-        <span className="subtitle" data-aos="fade-up">
-          CONHEÇA ALGUNS SITES QUE CRIAMOS
-        </span>
-        <h1 className="title" data-aos="fade-up">
-          Portfólio
-        </h1>
+        <span className="subtitle">CONHEÇA ALGUNS SITES QUE CRIAMOS</span>
+        <h1 className="title">Portfólio</h1>
       </div>
 
       <div className="portfolio-grid">
         {portfolioData.map((item) => (
-          <div
-            key={item.id}
-            className="portfolio-item"
-            data-aos="fade-up"
-            data-aos-delay={item.id * 100}
-          >
+          <div key={item.id} className="portfolio-item">
             <div className="laptop">
               <div className="laptop-screen">
                 <img
@@ -70,10 +61,11 @@ const Portfolio = () => {
       <button
         id="back-to-top"
         onClick={scrollToTop}
+        className="back-to-top-button"
         style={{
           display: "none",
           position: "fixed",
-          bottom: "120px",
+          bottom: "20px",
           right: "20px",
           zIndex: "1000",
           padding: "10px 15px",
