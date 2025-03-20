@@ -1,0 +1,366 @@
+.navbar {
+  background-color: #000000;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.desktop-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-auth {
+  margin-left: auto;
+}
+
+.area-cliente-button {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-brand {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.mobile-menu-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.mobile-login {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.user-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.user-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-button.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background-color: #333333;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 0;
+  min-width: 200px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+  list-style: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-item {
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: #0066cc !important;
+  transform: translateX(5px);
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  color: white;
+}
+
+.dropdown-item:hover i {
+  color: #0066cc;
+}
+
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #333333;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    width: auto;
+    margin-right: 2rem;
+  }
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0066cc;
+}
+
+.nav-links li a:hover {
+  color: #0066cc;
+}
+
+.nav-links .active {
+  color: #0066cc;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #0066cc !important;
+}
+
+.nav-links a:hover {
+  color: #0066cc !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0066cc !important;
+}
+
+.active {
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.area-cliente-btn {
+  background-color: #333333;
+  color: rgb(255, 255, 255) !important;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.area-cliente-btn:hover {
+  background-color: transparent;
+  color: #0066cc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #0066cc !important;
+}
+
+.nav-links a:hover {
+  color: #0066cc !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0066cc !important;
+}
+
+.active {
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.contact-button {
+  background: linear-gradient(135deg, #004fa3, #24acca);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background: linear-gradient(135deg, #002042, #0090b1);
+  color: #ffffff;
+}
+
+.navbar-logo {
+  height: 30px;
+  width: auto;
+  max-width: 100%;
+  margin-right: 10px;
+  background: linear-gradient(135deg, #004fa3, #24acca);
+  color: wheat;
+}
+
+/* .navbar-title {
+  font-size: 1.5rem;
+  color: #0066cc;
+  font-weight: bold;
+} */

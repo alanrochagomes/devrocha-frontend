@@ -1,0 +1,121 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-secondary {
+  background-color: #212529;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-secondary .avatar {
+  background-color: #1761ff;
+  color: #1e1e1e;
+  font-weight: bold;
+  font-size: 16px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #1761ff;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.user-time {
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.user-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-name {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.user-time {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.dark-dropdown {
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px 0;
+  min-width: 180px;
+}
+
+.dark-dropdown .dropdown-item {
+  color: white;
+  padding: 8px 16px;
+}
+
+.dark-dropdown .dropdown-item:hover {
+  background-color: #444;
+  color: white;
+}
+
+.dropdown-menu {
+  margin-top: 8px;
+}
