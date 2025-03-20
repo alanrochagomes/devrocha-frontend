@@ -13,7 +13,9 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i className="fab fa-whatsapp"></i>
+      <div className="whatsapp-background">
+        <i className="fab fa-whatsapp whatsapp-icon"></i>
+      </div>
     </a>
   );
 };

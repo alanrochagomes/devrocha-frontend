@@ -21,8 +21,8 @@
 
 .servicos-principais {
   padding: 4rem 2rem;
-  /* background: #edeff2;
-  border-radius: 10px; */
+  background: #ffffff;
+  border-radius: 10px;
 }
 
 .servicos-principais h2 {
@@ -39,7 +39,7 @@
 }
 
 .servico-card {
-  background: white;
+  background: #eff1f3;
   border-radius: 16px;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
