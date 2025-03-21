@@ -73,7 +73,7 @@ const Servicos = () => {
         "Site Responsivo",
         "5 páginas",
         "Blog Integrado",
-        "Integrações",
+        "Integração Básica",
         "Suporte 24x5",
       ],
       destaque: false,
@@ -416,7 +416,7 @@ const Servicos = () => {
 
       <section className="planos-section">
         <div className="planos-header">
-          <h2>Escolha o Melhor Plano para Você</h2>
+          <h2>Suporte, manutenção e atualizações mensais contínuas.</h2>
           <div className="planos-toggle">
             <button
               className={planoTipo === "mensal" ? "active" : ""}
