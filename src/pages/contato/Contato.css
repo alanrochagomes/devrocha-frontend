@@ -1,13 +1,14 @@
 .contato-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .contato-container h1 {
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .contato-info {
@@ -76,20 +77,17 @@
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #ffffff;
+  margin: 10px 0 5px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .form-group input:focus,
@@ -118,7 +116,7 @@
 .enviar-btn {
   width: 100%;
   padding: 1rem;
-  background-color: #0066cc;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 8px;
@@ -130,7 +128,7 @@
 }
 
 .enviar-btn:hover {
-  background-color: #0052a3;
+  background-color: #0056b3;
   transform: translateY(-1px);
 }
 

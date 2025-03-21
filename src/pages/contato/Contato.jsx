@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import emailjs from "emailjs-com";
 import "./Contato.css";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,13 @@ const Contato = () => {
     autorizouContato: false,
   });
 
+  const [state, handleSubmit] = useForm("xeoaarbk");
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -21,32 +30,54 @@ const Contato = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("Enviando dados do formulário:", formData);
 
-    try {
-      const response = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      );
-
-      console.log("Resposta do servidor:", response);
-      alert("Mensagem enviada com sucesso! Em breve entraremos em contato.");
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        assunto: "",
-        mensagem: "",
-        autorizouContato: false,
+    handleSubmit(e)
+      .then(() => {
+        setSubmitted(true);
+        toast.success("Mensagem enviada com sucesso!");
+        setFormData({
+          nome: "",
+          email: "",
+          assunto: "",
+          mensagem: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar a mensagem:", error);
+        toast.error("Falha ao enviar a mensagem. Tente novamente.");
       });
-    } catch (error) {
-      console.error("Erro detalhado:", error);
-      alert("Erro ao enviar mensagem. Por favor, tente novamente.");
-    }
+  };
+
+  const handleSubmitEmailjs = (e) => {
+    e.preventDefault();
+
+    const emailData = {
+      to_name: "Equipe DevRocha",
+      from_name: formData.nome,
+      from_email: formData.email,
+      subject: formData.assunto,
+      message: formData.mensagem,
+    };
+
+    emailjs.send("service_0btkjcl", "template_60sj9rj", emailData).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        toast.success("Mensagem enviada com sucesso!");
+
+        setFormData({
+          nome: "",
+          email: "",
+          assunto: "",
+          mensagem: "",
+        });
+      },
+      (error) => {
+        console.log("FAILED...", error);
+        toast.error("Falha ao enviar a mensagem. Tente novamente.");
+      }
+    );
   };
 
   const scrollToTop = () => {
@@ -70,8 +101,48 @@ const Contato = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        window.location.reload();
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
+
+  if (submitted) {
+    return (
+      <div className="contato-container">
+        <ToastContainer />
+        <h1>Formulário de Contato</h1>
+        <p>Obrigado por entrar em contato!</p>
+        <button
+          id="back-to-top"
+          onClick={scrollToTop}
+          style={{
+            display: "none",
+            position: "fixed",
+            bottom: "120px",
+            right: "20px",
+            zIndex: "1000",
+            padding: "10px 15px",
+            backgroundColor: "#007bff",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          ↑ Voltar ao topo
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="contato-container">
+      <ToastContainer />
       <h1>Entre em Contato</h1>
       <p className="contact-description">
         Estamos aqui para ajudar! Preencha o formulário abaixo e entraremos em
@@ -144,7 +215,7 @@ const Contato = () => {
       </div>
       <section className="contato-form-section">
         <h2>Formulário de Contato</h2>
-        <form className="contato-form" onSubmit={handleSubmit}>
+        <form id="contact-form" onSubmit={handleFormSubmit}>
           <div className="form-group">
             <label>
               Nome Completo <span className="required">*</span>
@@ -229,7 +300,18 @@ const Contato = () => {
             </label>
           </div>
 
-          <button type="submit" className="enviar-btn">
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+          <ValidationError
+            prefix="Mensagem"
+            field="message"
+            errors={state.errors}
+          />
+
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="enviar-btn"
+          >
             Enviar Mensagem
           </button>
         </form>
