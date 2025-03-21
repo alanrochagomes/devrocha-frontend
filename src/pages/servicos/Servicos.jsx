@@ -63,54 +63,60 @@ const Servicos = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // ============= Planos ===================
+
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$49,90" : "R$598,80",
-      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
-      features: [
-        "Site Responsivo",
-        "2 páginas",
-        "Domínio Grátis",
-        "SSL Gratuito",
-        "Suporte 8x5",
-      ],
-      destaque: true,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a",
-    },
-    {
-      titulo: "Standard",
-      preco: planoTipo === "mensal" ? "R$69,90" : "R$838,8",
-      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      preco: planoTipo === "mensal" ? "R$99,90/mês" : "R$1.198,80/ano",
       features: [
         "Site Responsivo",
         "5 páginas",
-        "Domínio Grátis",
-        "SSL Gratuito",
-        "Suporte 12x6",
-        "Painel Administrativo",
         "Blog Integrado",
+        "Integração Básica",
+        "Suporte 24x5",
       ],
       destaque: false,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6",
+      link:
+        planoTipo === "mensal"
+          ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a"
+          : "https://mpago.la/2vsRHr7",
+    },
+    {
+      titulo: "Standard",
+      preco: planoTipo === "mensal" ? "R$149,90/mês" : "R$1.798,80/ano",
+      features: [
+        "Site Responsivo",
+        "10 páginas",
+        "Blog Integrado",
+        "Integrações",
+        "Suporte 24x6",
+      ],
+      destaque: true,
+      link:
+        planoTipo === "mensal"
+          ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6"
+          : "https://mpago.la/12wn2QA",
     },
     {
       titulo: "Premium",
-      preco: planoTipo === "mensal" ? "R$99,90" : "R$1.198,8",
-      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      preco: planoTipo === "mensal" ? "R$169,90/mês" : "R$2.038,80/ano",
       features: [
         "Site Responsivo",
         "Páginas Ilimitadas",
         "Domínio Grátis",
-        "SSL Gratuito",
         "Suporte 24x7",
         "Painel Administrativo",
         "Blog Integrado",
         "E-commerce",
+        "Integrações",
         "API Personalizada",
       ],
       destaque: false,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c938084955cc4800195b503ba2e2751",
+      link:
+        planoTipo === "mensal"
+          ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c938084955cc4800195b503ba2e2751"
+          : "https://mpago.la/2HShiJz",
     },
   ];
 
@@ -348,9 +354,13 @@ const Servicos = () => {
                   <li key={i}>✓ {feature}</li>
                 ))}
               </ul>
-              <button className="servico-btn" onClick={scrollToSolicitacao}>
+              <Link
+                to="/contato"
+                className="servico-btn"
+                rel="noopener noreferrer"
+              >
                 Saiba Mais
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -406,7 +416,7 @@ const Servicos = () => {
 
       <section className="planos-section">
         <div className="planos-header">
-          <h2>Escolha o Melhor Plano para Você</h2>
+          <h2>Suporte, manutenção e atualizações mensais contínuas.</h2>
           <div className="planos-toggle">
             <button
               className={planoTipo === "mensal" ? "active" : ""}
@@ -433,7 +443,6 @@ const Servicos = () => {
               <h3>{plano.titulo}</h3>
               <div className="plano-preco">
                 <span className="preco">{plano.preco}</span>
-                <span className="periodo">{plano.periodo}</span>
               </div>
               <ul className="plano-features">
                 {plano.features.map((feature, i) => (
@@ -443,20 +452,20 @@ const Servicos = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href={plano.link}
+              <Link
+                to={plano.link}
                 className="plano-btn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Escolher Plano
-              </a>
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="animation-section">
+      {/* TODO: <section className="animation-section">
         <div className="animation-container">
           <img
             src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Designer.gif"
@@ -637,7 +646,7 @@ const Servicos = () => {
             Solicitar Orçamento
           </button>
         </form>
-      </section>
+      </section> */}
 
       <section className="faq-section">
         <div className="faq-header">

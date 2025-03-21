@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tailwindcss/typography": "^0.5.16",
@@ -24,6 +25,7 @@
     "react-is": "^19.0.0",
     "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.5",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
