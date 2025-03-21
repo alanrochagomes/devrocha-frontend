@@ -66,72 +66,81 @@ const Servicos = () => {
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$49,90" : "R$598,80",
-      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
-      features: [
-        "Site Responsivo",
-        "2 páginas",
-        "Domínio Grátis",
-        "SSL Gratuito",
-        "Suporte 8x5",
-      ],
-      destaque: true,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a",
-    },
-    {
-      titulo: "Standard",
-      preco: planoTipo === "mensal" ? "R$69,90" : "R$838,8",
-      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
-      features: [
-        "Site Responsivo",
-        "5 páginas",
-        "Domínio Grátis",
-        "SSL Gratuito",
-        "Suporte 12x6",
-        "Painel Administrativo",
-        "Blog Integrado",
-      ],
-      destaque: false,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6",
-    },
-    {
-      titulo: "Premium",
       preco: planoTipo === "mensal" ? "R$99,90" : "R$1.198,8",
       periodo: planoTipo === "mensal" ? "/mês" : "/ano",
       features: [
         "Site Responsivo",
-        "Páginas Ilimitadas",
+        "5 páginas",
+        "Blog Integrado",
+        "Integrações",
+        "Suporte 24x5",
+      ],
+      destaque: true,
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c938084955cc4800195b503ba2e2751",
+    },
+
+    {
+      titulo: "Standard",
+      preco: planoTipo === "mensal" ? "R$149,90" : "R$1.798,8",
+      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      features: [
+        "Site Responsivo",
+        "10 páginas",
+        "Blog Integrado",
+        "Integrações",
+
+        "Suporte 24x6",
+      ],
+      destaque: false,
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a",
+    },
+
+    {
+      titulo: "Premium",
+      preco: planoTipo === "mensal" ? "R$169,90" : "R$2.038,8",
+      periodo: planoTipo === "mensal" ? "/mês" : "/ano",
+      features: [
+        "Site Responsivo",
         "Domínio Grátis",
-        "SSL Gratuito",
         "Suporte 24x7",
         "Painel Administrativo",
         "Blog Integrado",
+        "Páginas Ilimitadas",
         "E-commerce",
+        "Integrações",
         "API Personalizada",
       ],
       destaque: false,
-      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c938084955cc4800195b503ba2e2751",
+      link: "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6",
     },
   ];
 
   const servicos = [
-    {
-      titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 99,90/mês",
-      descricao: "Suporte e atualizações contínuas",
-      icon: "🔧",
-      features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
-      categorias: ["todos", "manutencao"],
-    },
+    // {
+    //   titulo: "Manutenção Mensal",
+    //   preco: "A partir de R$ 99,90/mês",
+    //   descricao: "Suporte e atualizações contínuas",
+    //   icon: "🔧",
+    //   features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
+    //   categorias: ["todos", "manutencao"],
+    // },
 
     {
-      titulo: "Desenvolvimento Web",
+      titulo: "Desenvolvimento Web e Aplicações",
       preco: "Preço sob consulta",
       descricao: "Sites profissionais e responsivos",
       icon: "💻",
-      features: ["Design Responsivo", "SEO Otimizado", "Painel Administrativo"],
+      features: [
+        "Design Responsivo",
+        "Integrações",
+        "Painel Administrativo",
+        "Pagamentos Online",
+        "Gestão de Estoque",
+        "SEO",
+      ],
       categorias: ["todos", "criacao"],
     },
+
     // {
     //   titulo: "E-commerce",
     //   preco: "A partir de R$ 4.500",
@@ -144,14 +153,14 @@ const Servicos = () => {
     //   ],
     //   categorias: ["todos", "criacao"],
     // },
-    {
-      titulo: "Aplicações Web",
-      preco: "Preço sob consulta",
-      descricao: "Sistemas web personalizados",
-      icon: "⚙️",
-      features: ["Dashboard Personalizado", "APIs RESTful", "Integrações"],
-      categorias: ["todos", "criacao"],
-    },
+    // {
+    //   titulo: "Aplicações Web",
+    //   preco: "Preço sob consulta",
+    //   descricao: "Sistemas web personalizados",
+    //   icon: "⚙️",
+    //   features: ["Dashboard Personalizado", "APIs RESTful", "Integrações"],
+    //   categorias: ["todos", "criacao"],
+    // },
 
     {
       titulo: "Landing Pages",
@@ -162,14 +171,14 @@ const Servicos = () => {
       categorias: ["todos", "criacao"],
     },
 
-    {
-      titulo: "UI/UX Design",
-      preco: "Preço sob consulta",
-      descricao: "Design moderno e intuitivo",
-      icon: "🎨",
-      features: ["Protótipos", "Design System", "Testes de Usabilidade"],
-      categorias: ["todos", "design"],
-    },
+    // {
+    //   titulo: "UI/UX Design",
+    //   preco: "Preço sob consulta",
+    //   descricao: "Design moderno e intuitivo",
+    //   icon: "🎨",
+    //   features: ["Protótipos", "Design System", "Testes de Usabilidade"],
+    //   categorias: ["todos", "design"],
+    // },
 
     // {
     //   titulo: "Marketing Digital",
@@ -185,7 +194,7 @@ const Servicos = () => {
       preco: "Preço sob consulta",
       descricao: "Infraestrutura escalável",
       icon: "☁️",
-      features: ["SSL Gratuito", "CDN Global", "Backup Automático"],
+      features: ["Domínio", "E-mail com domínio próprio", "SSL Gratuito"],
       categorias: ["todos", "infraestrutura"],
     },
   ];
@@ -406,7 +415,9 @@ const Servicos = () => {
 
       <section className="planos-section">
         <div className="planos-header">
-          <h2>Escolha o Melhor Plano para Você</h2>
+          {/* <h2>Escolha o Melhor Plano para Você</h2> */}
+          <h2>Suporte, manutenção e atualizações contínuas mensais. </h2>
+
           <div className="planos-toggle">
             <button
               className={planoTipo === "mensal" ? "active" : ""}
