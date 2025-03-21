@@ -68,7 +68,7 @@ const Servicos = () => {
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$99,90" : "R$1.198,80",
+      preco: planoTipo === "mensal" ? "R$99,90/mês" : "R$1.198,80/ano",
       features: [
         "Site Responsivo",
         "5 páginas",
@@ -82,10 +82,9 @@ const Servicos = () => {
           ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a"
           : "https://mpago.la/2vsRHr7",
     },
-
     {
       titulo: "Standard",
-      preco: planoTipo === "mensal" ? "R$149,90" : "R$1.798,80",
+      preco: planoTipo === "mensal" ? "R$149,90/mês" : "R$1.798,80/ano",
       features: [
         "Site Responsivo",
         "10 páginas",
@@ -99,10 +98,9 @@ const Servicos = () => {
           ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495af2b800195b503522403a6"
           : "https://mpago.la/12wn2QA",
     },
-
     {
       titulo: "Premium",
-      preco: planoTipo === "mensal" ? "R$169,90" : "R$2.038,80",
+      preco: planoTipo === "mensal" ? "R$169,90/mês" : "R$2.038,80/ano",
       features: [
         "Site Responsivo",
         "Páginas Ilimitadas",
@@ -356,9 +354,13 @@ const Servicos = () => {
                   <li key={i}>✓ {feature}</li>
                 ))}
               </ul>
-              <button className="servico-btn" onClick={scrollToSolicitacao}>
+              <Link
+                to="/contato"
+                className="servico-btn"
+                rel="noopener noreferrer"
+              >
                 Saiba Mais
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -441,7 +443,6 @@ const Servicos = () => {
               <h3>{plano.titulo}</h3>
               <div className="plano-preco">
                 <span className="preco">{plano.preco}</span>
-                <span className="periodo">{plano.periodo}</span>
               </div>
               <ul className="plano-features">
                 {plano.features.map((feature, i) => (
@@ -451,20 +452,20 @@ const Servicos = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href={plano.link}
+              <Link
+                to={plano.link}
                 className="plano-btn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Escolher Plano
-              </a>
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="animation-section">
+      {/* TODO: <section className="animation-section">
         <div className="animation-container">
           <img
             src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Designer.gif"
@@ -645,7 +646,7 @@ const Servicos = () => {
             Solicitar Orçamento
           </button>
         </form>
-      </section>
+      </section> */}
 
       <section className="faq-section">
         <div className="faq-header">

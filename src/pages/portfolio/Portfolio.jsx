@@ -27,7 +27,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio-container">
       <div className="portfolio-header">
-        <span className="subtitle">CONHEÇA ALGUNS SITES QUE CRIAMOS</span>
+        {/* <span className="subtitle">CONHEÇA ALGUNS SITES QUE CRIAMOS</span> */}
         <h1 className="title">Portfólio</h1>
       </div>
 
