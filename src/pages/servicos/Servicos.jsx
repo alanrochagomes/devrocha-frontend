@@ -68,7 +68,7 @@ const Servicos = () => {
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$99,90/mês" : "R$1.198,80/ano",
+      preco: planoTipo === "mensal" ? "R$129,90/mês" : "R$1.558,80/ano",
       features: [
         "Site Responsivo",
         "5 páginas",
@@ -79,8 +79,8 @@ const Servicos = () => {
       destaque: false,
       link:
         planoTipo === "mensal"
-          ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495b452f90195b501f280006a"
-          : "https://mpago.la/2vsRHr7",
+          ? "https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808495be9ff00195c89352ff04f0"
+          : "https://mpago.la/2L8UndZ",
     },
     {
       titulo: "Standard",
