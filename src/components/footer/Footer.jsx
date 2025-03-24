@@ -73,7 +73,7 @@ const Footer = () => {
             <ul>
               <li>contato@devrocha.com.br</li>
               <li>(21) 9985-79960</li>
-              <li>Endereço: Costa Verde, RJ</li>
+              <li>Endereço: Costa Verde, Itaguaí RJ</li>
             </ul>
           </div>
 

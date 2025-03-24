@@ -17,7 +17,7 @@ import Blog from "./pages/blog/blog";
 import BlogPost from "./pages/blog/blogPost";
 import FaleConosco from "./pages/faleConosco/FaleConosco";
 import ProgressRequestForm from "./components/ProgressRequestForm/ProgressRequestForm";
-import CookieConsent from "./components/cookie/CookieConsent";
+// import CookieConsent from "./components/cookie/CookieConsent";
 
 import Pagamento from "./components/Pagamento/Pagamento";
 
@@ -49,7 +49,7 @@ const App = () => {
         </div>
         <Footer />
         <WhatsAppButton />
-        <CookieConsent />
+        {/* <CookieConsent /> */}
       </div>
     </BrowserRouter>
   );
