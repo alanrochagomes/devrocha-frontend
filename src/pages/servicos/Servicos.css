@@ -665,3 +665,151 @@
     padding: 1rem;
   }
 }
+
+.simulador-preco-section {
+  padding: 4rem 2rem;
+  background: #3f95dd;
+  margin: 20px 0;
+  color: white;
+}
+
+.simulador-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.simulador-header h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.simulador-container {
+  display: flex;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  align-items: flex-start;
+}
+
+.simulador-form {
+  flex: 2;
+}
+
+.simulador-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.form-question {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  background: #444f5a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.simulador-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background: white;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.simulador-form input:focus {
+  outline: none;
+}
+
+.simulador-form input:disabled {
+  background: #e2e2e2;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.simulador-form input:disabled + .input-label {
+  background: #3a424b;
+}
+
+.input-label {
+  background: #444f5a;
+  color: white;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.simulador-resultado {
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.resultado-label {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.valor-total {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3f95dd;
+  margin-bottom: 1rem;
+}
+
+.resultado-aviso {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 1rem;
+  border-left: 4px solid #3f95dd;
+}
+
+@media (max-width: 768px) {
+  .simulador-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .simulador-preco-section {
+    padding: 2rem 1rem;
+  }
+
+  .simulador-header h2 {
+    font-size: 2rem;
+  }
+
+  .valor-total {
+    font-size: 2.5rem;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+  }
+
+  .input-label {
+    text-align: center;
+  }
+}
+
+.form-info {
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
