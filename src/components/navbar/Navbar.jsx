@@ -94,6 +94,8 @@ const Navbar = ({ user, setUser }) => {
               >
                 Serviços
               </NavLink>
+              
+              {/* 
               <NavLink
                 to="/projetos"
                 onClick={toggleMobileMenu}
@@ -101,6 +103,8 @@ const Navbar = ({ user, setUser }) => {
               >
                 Projetos
               </NavLink>
+              */}
+
               <NavLink
                 to="/contato"
                 onClick={toggleMobileMenu}
@@ -149,9 +153,11 @@ const Navbar = ({ user, setUser }) => {
             <NavLink to="/servicos" activeClassName="active">
               Serviços
             </NavLink>
+            {/* 
             <NavLink to="/projetos" activeClassName="active">
               Projetos
-            </NavLink>
+            </NavLink> 
+            */}
             <NavLink to="/contato" activeClassName="active">
               Contato
             </NavLink>

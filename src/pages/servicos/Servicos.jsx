@@ -7,6 +7,9 @@ const Servicos = () => {
   const [planoTipo, setPlanoTipo] = useState("mensal");
   const [categoriaAtiva, setCategoriaAtiva] = useState("todos");
   const [activeQuestion, setActiveQuestion] = useState(null);
+  const [valorTotal, setValorTotal] = useState("0,00");
+  const valorHoraPadrao = 12; // Valor por hora fixo
+  const horasDiaPadrao = 10; // Horas por dia fixo
 
   const [formData, setFormData] = useState({
     nome: "",
@@ -68,7 +71,7 @@ const Servicos = () => {
   const planos = [
     {
       titulo: "Básico",
-      preco: planoTipo === "mensal" ? "R$129,90/mês" : "R$1.558,80/ano",
+      preco: planoTipo === "mensal" ? "R$300,00/mês" : "R$3.600,00/ano",
       features: [
         "Site Responsivo",
         "5 páginas",
@@ -123,7 +126,7 @@ const Servicos = () => {
   const servicos = [
     {
       titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 99,90/mês",
+      preco: "A partir de R$ 399,90/mês",
       descricao: "Suporte e atualizações contínuas",
       icon: "🔧",
       features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
@@ -316,6 +319,11 @@ const Servicos = () => {
     },
   ];
 
+  const calcularValorTotal = (diasProjeto) => {
+    const total = valorHoraPadrao * horasDiaPadrao * (diasProjeto || 0);
+    setValorTotal(total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const backToTopButton = document.getElementById("back-to-top");
@@ -414,7 +422,69 @@ const Servicos = () => {
         </div> */}
       </section>
 
-      <section className="planos-section">
+      <section className="simulador-preco-section">
+        <div className="simulador-header">
+          <h2>Quer calcular o valor de um projeto?</h2>
+        </div>
+
+        <div className="simulador-container">
+          <div className="simulador-form">
+            <div className="form-group">
+              <p className="form-question">Valor cobrado por hora:</p>
+              <div className="input-wrapper">
+                <input
+                  type="number"
+                  value={valorHoraPadrao}
+                  className="valor-hora"
+                  disabled
+                />
+                <div className="input-label">Meu valor/hora</div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <p className="form-question">Tempo estimado de desenvolvimento:</p>
+              <div className="input-wrapper">
+                <input
+                  type="number"
+                  value={horasDiaPadrao}
+                  className="horas-dia"
+                  disabled
+                />
+                <div className="input-label">Horas por dia</div>
+              </div>
+              <p className="form-info">A consultar, mas esse é o padrão</p>
+            </div>
+
+            <div className="form-group">
+              <p className="form-question">Definir quantos dias irá durar o projeto?</p>
+              <div className="input-wrapper">
+                <input
+                  type="number"
+                  min="0"
+                  placeholder="0"
+                  className="dias-projeto"
+                  onChange={(e) => calcularValorTotal(e.target.value)}
+                />
+                <div className="input-label">Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="simulador-resultado">
+            <p className="resultado-label">Valor total do projeto</p>
+            <div className="valor-total">
+              R$ <span className="valor">{valorTotal}</span>
+            </div>
+            <p className="resultado-aviso">
+              *Sob consulta: dependendo da complexidade do projeto e do prazo definido (em dias ou meses), o valor poderá ser reajustado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Planos de Suporte e Manutenção */}
+      {/* <section className="planos-section">
         <div className="planos-header">
           <h2>Suporte, manutenção e atualizações mensais contínuas.</h2>
           <div className="planos-toggle">
@@ -463,7 +533,7 @@ const Servicos = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* TODO: <section className="animation-section">
         <div className="animation-container">
