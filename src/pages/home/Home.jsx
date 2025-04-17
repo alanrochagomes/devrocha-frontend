@@ -58,25 +58,41 @@ const Home = () => {
 
   const beneficios = [
     {
-      icon: "💻",
+      icon: "fa-solid fa-code",
       titulo: "Desenvolvimento Web",
       descricao: "Sites e sistemas modernos e personalizados",
+      cor: "#4A90E2"
     },
     {
-      icon: "🛠️",
+      icon: "fa-solid fa-gears",
       titulo: "Manutenção",
       descricao: "Suporte técnico e atualizações constantes",
+      cor: "#50C878"
     },
     {
-      icon: "🎨",
+      icon: "fa-solid fa-palette",
       titulo: "Design UI/UX",
       descricao: "Interfaces intuitivas e experiências memoráveis",
+      cor: "#FF6B6B"
     },
     {
-      icon: "🔒",
+      icon: "fa-solid fa-shield-halved",
       titulo: "Segurança",
       descricao: "Proteção de dados e backups automáticos",
+      cor: "#FFB400"
     },
+    {
+      icon: "fa-solid fa-mobile-screen",
+      titulo: "Responsividade",
+      descricao: "Adaptação perfeita para todos os dispositivos",
+      cor: "#9B59B6"
+    },
+    {
+      icon: "fa-solid fa-rocket",
+      titulo: "Performance",
+      descricao: "Otimização e velocidade excepcional",
+      cor: "#E67E22"
+    }
   ];
 
   const tecnologias = [
@@ -123,46 +139,30 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="beneficios-grid">
-          <div className="beneficio-card" data-aos="fade-up">
-            <div className="card-icon">💻</div>
-            <h3>Desenvolvimento Web</h3>
-            <p>Sites, sistemas e aplicações web sob medida</p>
-            <Link to="/servicos" className="saiba-mais">
-              Conheça nossos serviços →
-            </Link>
+        <section className="beneficios-section" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Nossos Serviços</h2>
+            <p>Soluções completas para sua presença digital</p>
           </div>
-
-          <div
-            className="beneficio-card"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div className="card-icon">🛠️</div>
-            <h3>Manutenção de Sistemas</h3>
-            <p>Suporte técnico especializado e atualizações</p>
+          <div className="beneficios-grid">
+            {beneficios.map((beneficio, index) => (
+              <div
+                className="beneficio-card"
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                style={{"--card-color": beneficio.cor}}
+              >
+                <div className="beneficio-icon">
+                  <i className={beneficio.icon}></i>
+                </div>
+                <h3>{beneficio.titulo}</h3>
+                <p>{beneficio.descricao}</p>
+                <div className="card-hover-effect"></div>
+              </div>
+            ))}
           </div>
-
-          <div
-            className="beneficio-card"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div className="card-icon">🎨</div>
-            <h3>Design UI/UX</h3>
-            <p>Interfaces modernas e experiências incríveis</p>
-          </div>
-
-          <div
-            className="beneficio-card"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div className="card-icon">📱</div>
-            <h3>Aplicações Responsivas</h3>
-            <p>Sistemas adaptados para todos os dispositivos</p>
-          </div>
-        </div>
+        </section>
       </section>
 
       <section className="dev-web-section" data-aos="fade-up">
