@@ -126,7 +126,8 @@ const Servicos = () => {
   const servicos = [
     {
       titulo: "Manutenção Mensal",
-      preco: "A partir de R$ 399,90/mês",
+      preco: "Preço sob consulta",
+      // preco: "A partir de R$ 399,90/mês",
       descricao: "Suporte e atualizações contínuas",
       icon: "🔧",
       features: ["Backup Diário", "Monitoramento 24/7", "Suporte Técnico"],
@@ -422,7 +423,7 @@ const Servicos = () => {
         </div> */}
       </section>
 
-      <section className="simulador-preco-section">
+      {/* TODO: <section className="simulador-preco-section">
         <div className="simulador-header">
           <h2>Quer calcular o valor de um projeto?</h2>
         </div>
@@ -481,7 +482,7 @@ const Servicos = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Seção de Planos de Suporte e Manutenção */}
       {/* <section className="planos-section">
